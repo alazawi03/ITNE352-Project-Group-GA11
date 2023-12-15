@@ -44,6 +44,15 @@ if flight_info:
         json.dump(flight_info, json_file, indent=2)
 
     print(f"Flight information saved to {filename}")
+    
+# Receving the option to send (a,b,c,d)
+OptionChose=-1
+# Send a prompt to the client
+sock_a.send("Server >> What option to choose?".encode())
+
+# Receive the option from the client
+OptionChose = sock_a.recv(1024).decode('ascii')
+print(f"Option Choose : {OptionChose}")
 
 sock_a.close()
 ss.close()

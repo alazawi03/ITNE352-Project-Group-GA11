@@ -62,9 +62,11 @@ def ReceiveInformationAndSendIt():
     def network_task():
         cs.connect(("127.0.0.1", 49999))
         data, addr = cs.recvfrom(4096)
-        print(f"Server >>: {data.decode()}")
+        print(f"Server >> {data.decode()}")
         cs.send(icao.encode())
-        cs.close()
+        data, addr = cs.recvfrom(4096)
+        cs.send(str(OptionChose.get()).encode('ascii'))
+        
     network_thread = threading.Thread(target=network_task)
     network_thread.start()
 def goodBye():
