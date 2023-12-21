@@ -23,6 +23,23 @@ with open('GA11.json','w') as f:
     json.dump(data, f, indent=2)
 
 #4. Wait for client requests to connect (at least 3 connections)
+
+def retriveData(option,parm):
+   with open('GA11.json','r') as rf:
+    data=json.load(rf)
+    if option=='a':
+        # Filter objects where 'flight_status' is 'landed'
+        landed_flights = [flight for flight in data['data'] if flight['flight_status'] == 'landed']
+        # Print the filtered flights
+        for flight in landed_flights:
+            print(flight)
+    elif option=='b':
+        print("b")
+    elif option=='c':
+        print("c")
+    elif option=='d':
+        print("d")
+       
 def opt(option):
     parm="-1"
     option_disp=""
@@ -36,11 +53,7 @@ def opt(option):
     elif option=='d':
         parm=client_socket.recv(1024)
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
-    return parm,option_disp
-
-#exit_event = threading.Event()
-
-#TODO: FUNCTION OF CHOICES
+    return option_disp,parm
 
 def handle_client(client_socket,name):
     option = client_socket.recv(1024)
@@ -48,72 +61,10 @@ def handle_client(client_socket,name):
     if option=='quit':
         print(f"{name} has been discconnected")
         client_socket.close()
-    elif option == 'a' : 
-        a_flights = []
-        for flight in data : 
-           if flight.get("flight_status") == "landed" : 
-               result = { 
-                "flight_iata": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "arrival_actual": data[i]["arrival"]["actual"],
-                "arrival_terminal": data[i]["arrival"]["terminal"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-               }
-               a_flight.append(result) 
-        client_socket.send ( json.dumps(a_flights) )
-    
-    elif option == "b" : 
-      d_flights = []
-      for i in data : 
-          if data[i]["arrival"]["delay"] != None:
-            result = {
-                "flight_IATA": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "org_departure_time": data[i]["departure"]["scheduled"],
-                "estimated_arrival_time": data[i]["arrival"]["estimated"],
-                "arrival_terminal": data[i]["arrival"]["terminal"],
-                "departure_delay": data[i]["departure"]["delay"],
-                "arrival_delay": data[i]["arrival"]["delay"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-            }
-            d_flights.append(result)
-      client_socket.send ( json.dumps(d_flights) )
-
-    elif option == "c" :
-       specific_flights = []
-       for s in data : 
-           if data[i]["departure"]["icao"] == parm :
-              result = {
-                "flight_iata": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "departure_scheduled": data[i]["departure"]["scheduled"],
-                "arrival_estimated": data[i]["arrival"]["estimated"],
-                "departure_gate": data[i]["departure"]["gate"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-                "flight_status": data[i]["flight_status"],
-            }
-           specific_flights.append(result)     
-       client_socket.send ( json.dumps(d_flights) )
-
-    elif option == "d" :
-        for i in data : 
-            if data[i]["flight"]["iata"] == parm:
-               result =  {
-                "flight IATA": data[i]["flight"]["iata"],
-                "departure airport": data[i]["departure"]["airport"],
-                "departure gate": data[i]["departure"]["gate"],
-                "departure terminal": data[i]["departure"]["terminal"],
-                "arrival airport": data[i]["arrival"]["airport"],
-                "arrival gate": data[i]["arrival"]["gate"],
-                "arrival terminal": data[i]["arrival"]["terminal"],
-                "departure scheduled": data[i]["departure"]["scheduled"],
-                "arrival scheduled": data[i]["arrival"]["scheduled"],
-            }  
-        client_socket.send ( json.dumps(result) )
-
-    
-    option_disp,parm =opt(option=option)
-    print(f"{name}>> asks for {option_disp}")
+        return
+    option_disp,parm=opt(option=option)
+    print(f"{name} >> asks for {option_disp}")
+    retriveData(option=option,parm=parm)
 
     #client_socket.send(response)
     #client_socket.close()
