@@ -77,34 +77,3 @@ buRequest = ttk.Button(root, text='Request')
 buRequest.grid(row=6, column=3)
 buQuit = ttk.Button(root, text='Quit')
 buQuit.grid(row=6, column=2)
-#------FINISH OF UI-------
-cs = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-""" def ReceiveInformationAndSendIt():
-    username = username_entry.get()
-    username_entry.delete(0, END)
-    icao = icao_entry.get()
-    icao_entry.delete(0, END)
-
-    def network_task():
-        cs.connect(("127.0.0.1", 49999))
-        data, addr = cs.recvfrom(4096)
-        print(f"Server >> {data.decode()}")
-        cs.send(icao.encode())
-        data, addr = cs.recvfrom(4096)
-        print(data.decode())  # line 143 in server
-        cs.send(OptionChose.get().encode('ascii'))
-
-    network_thread = threading.Thread(target=network_task)
-    network_thread.start() """
-
-cs.connect(('127.0.0.1',12345))
-username = username_entry.get()
-cs.send(username.encode('ascii'))
-def goodBye():
-    # TODO: Quit
-    print("Bye!")
-
-""" buRequest.config(command=ReceiveInformationAndSendIt)
-buQuit.config(command=goodBye) """
-root.mainloop()
