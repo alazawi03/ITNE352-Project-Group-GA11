@@ -5,9 +5,22 @@ import urllib.error
 from urllib.request import urlopen
 import json
 
-# AviationStack API key
-api_key = "ec9a339729e37e6f9dcb2531ca197d4e"
+#api
+API_ACCESS_KEY = "ec9a339729e37e6f9dcb2531ca197d4e"
+API_ENDPOINT = "http://api.aviationstack.com/v1/flights"
+arr_icao = input("Please enter the airport code (arr_icao): ")
+params = {
+    'access_key': API_ACCESS_KEY,
+    'arr_icao': arr_icao,
+    'limit': 100  # You can adjust the limit as needed
+}
 
+response = requests.get(API_ENDPOINT, params=params)
+data = response.json()
+output_file_path = "group_ID.json"
+
+with open(output_file_path, 'w') as json_file:
+    json.dump(data, json_file, indent=2)
 
 def get_flight_info(airport_code):
     api_url = f"http://api.aviationstack.com/v1/flights?access_key={api_key}&limit=100&arr_icao={airport_code}"
@@ -145,7 +158,7 @@ sock_a.send("Server >> What option to choose?".encode())
 # Receive the option from the client
 OptionChose = sock_a.recv(1024).decode("ascii")
 print(f"Option Choose : {OptionChose}")
-
+#TODO: 1,2,3,4 = a,b,c,d
 match int(OptionChose):
     case 1:
         print(json.dumps(searchForArrival(airport_code)))
