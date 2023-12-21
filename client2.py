@@ -13,8 +13,11 @@ def cs():
     client.send(username.encode('ascii'))
     option_chose = OptionChose.get()
     client.send(option_chose.encode('ascii'))
-    if option_chose == 'c' or option_chose == 'd':
+    if option_chose == 'c':
         parm = optionC_entry.get()
+        client.send(parm.encode('ascii'))
+    elif option_chose == 'd':
+        parm = optionD_entry.get()
         client.send(parm.encode('ascii'))
 
 def toggle_entry_state():
