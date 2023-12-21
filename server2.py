@@ -23,15 +23,32 @@ with open('GA11.json','w') as f:
     json.dump(data, f, indent=2)
  """
 #4. Wait for client requests to connect (at least 3 connections)
+def opt(option):
+    parm="-1"
+    option_disp=""
+    if option=='a':
+        option_disp="A. Arrived Flights"
+    elif option=='b':
+        option_disp="B. Delayed Flights"
+    elif option=='c':
+        parm=client_socket.recv(1024)
+        option_disp=f"C. Flights from Specific City with departure IATA {parm}"
+    elif option=='d':
+        parm=client_socket.recv(1024)
+        option_disp=f"D. Details of a Particular Flight with flight number {parm}"
+    elif option=='quit':
+        option_disp="Quiting..."
+    return parm,option_disp
+
 def handle_client(client_socket,name):
-    # Code to handle a specific client connection
-    # This function will be executed in a separate thread for each client
-    msg = client_socket.recv(1024)
-    print(f"Received: {msg}")
-    # Add your custom logic here to process the request
-    response = b"Hello, client! I received your request."
-    client_socket.send(response)
-    client_socket.close()
+    option = client_socket.recv(1024)
+    option=option.decode('ascii')
+    option_disp,parm=opt(option=option)
+    print(f"{name}>> asks for {option_disp}")
+    
+    
+    #client_socket.send(response)
+    #client_socket.close()
 
 addres=('127.0.0.1',12345) 
 server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -45,6 +62,9 @@ while True:
     client_socket, addr = server.accept()
     client_name = client_socket.recv(1024)
     name=client_name.decode('ascii')
+    if name=='quit':
+        client_socket.close()
+        break
     print(f"Accepted Connection No.{counter} with {name}")
     client_handler= threading.Thread(target=handle_client, args=(client_socket,name))
     client_handler.start()

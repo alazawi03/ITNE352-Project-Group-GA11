@@ -1,17 +1,27 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, simpledialog
 import socket
 import threading
 
-#UI Until 80
-root = Tk()
+#CLIENT
+
+""" client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect(('127.0.0.1',12345)) """
+
+def cs():
+    username = username_entry.get()
+    client.send(username.encode('ascii'))
+    option_chose = OptionChose.get()
+    client.send(option_chose.encode('ascii'))
+    if option_chose == 'c' or option_chose == 'd':
+        parm = optionC_entry.get()
+        client.send(parm.encode('ascii'))
 
 def toggle_entry_state():
     optionC_label.grid_remove()
     optionC_entry.grid_remove()
     optionD_label.grid_remove()
     optionD_entry.grid_remove()
-
     if OptionChose.get() == 'c':
         optionC_label.grid()
         optionC_entry.grid()
@@ -19,7 +29,13 @@ def toggle_entry_state():
         optionD_label.grid()
         optionD_entry.grid()
 
+def quit_and_change_option():
+    client.send("quit".encode('ascii'))
+    root.destroy()
+    client.close()
 
+#START UI
+root = Tk()
 # option C
 optionC_label = ttk.Label(root, text="Enter departure IATA: ")
 optionC_label.grid(row=4, column=1)
@@ -65,7 +81,6 @@ rb3.grid(row=3, column=1)
 rb4 = ttk.Radiobutton(root, text='D. Details of a Particular Flight', variable=OptionChose, value="d", command=toggle_entry_state)
 rb4.grid(row=3, column=2)
 
-# row 4,5 are free
 
 # Requested Data - UI
 ttk.Label(root, text="The Requested data:").grid(row=5, column=0)
@@ -73,7 +88,10 @@ txtRequestedData = Text(root, width=30, height=15, font=font1)
 txtRequestedData.grid(row=5, column=1, columnspan=2)
 
 # Request/Quit - UI
-buRequest = ttk.Button(root, text='Request')
+buRequest = ttk.Button(root, text='Request', command=cs)
 buRequest.grid(row=6, column=3)
-buQuit = ttk.Button(root, text='Quit')
+buQuit = ttk.Button(root, text='Quit', command=quit_and_change_option)
 buQuit.grid(row=6, column=2)
+
+
+root.mainloop()
