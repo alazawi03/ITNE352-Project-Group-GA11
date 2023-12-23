@@ -28,7 +28,7 @@ def cs():
         client.send(parm.encode('ascii'))
     elif option_chose == 'd':
         parm = optionD_entry.get()
-        client.send(parm.encode('ascii'))
+    client.send(parm.encode('ascii'))
     number_of_records=client.recv(4096).decode('ascii')
     if number_of_records=='Error 404 Not Found':
         #TODO: Display Error,..
