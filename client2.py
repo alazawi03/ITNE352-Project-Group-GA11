@@ -1,12 +1,11 @@
 from tkinter import *
 from tkinter import ttk, simpledialog
 import socket
-import threading
+import json
 
-#CLIENT
-
-""" client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(('127.0.0.1',12345)) """
+#TODO: if name==null , name='Unkown"
+client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect(('127.0.0.1',12345))
 
 def cs():
     username = username_entry.get()
@@ -19,7 +18,16 @@ def cs():
     elif option_chose == 'd':
         parm = optionD_entry.get()
         client.send(parm.encode('ascii'))
-
+    number_of_records=client.recv(4096).decode('ascii')
+    if number_of_records=='Error 404 Not Found':
+        #TODO: Display Error,..
+        print('ERROR')
+    else:
+        received_data = client.recv(4096).decode('ascii')
+        parsed_data = json.loads(received_data)
+        print(f"RECERIVED {number_of_records} DATA!!")
+        print(parsed_data)
+    
 def toggle_entry_state():
     optionC_label.grid_remove()
     optionC_entry.grid_remove()

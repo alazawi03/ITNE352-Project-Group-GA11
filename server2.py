@@ -3,6 +3,9 @@ import json
 import socket
 import threading
 
+#TODO: ERROR HANDEL
+#TODO: 
+
 #1. Ask the user to enter arr_icao
 arr_icao=input("Please enter airport code: ")
 
@@ -21,8 +24,84 @@ data = response.json()
 #3. Store the retrived data in JSON file caleed "group_ID.json"
 with open('GA11.json','w') as f:
     json.dump(data, f, indent=2)
+    print("File saved") #TODO: better message
 
 #4. Wait for client requests to connect (at least 3 connections)
+
+def retriveData(option,parm):
+   with open('GA11.json','r') as rf:
+    data=json.load(rf)['data']
+    if option=='a':
+        temp=[]
+        r=0
+        for i in data:
+            if i['flight_status']=='landed':
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'arrival_actual':i['arrival']['actual'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'arrival_gate':i['arrival']['gate']
+                }
+                temp.append(d)
+        return temp,r
+    elif option=='b':
+        temp=[]
+        r=0
+        for i in data:
+            if i['departure']['delay'] != None:
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'org_departure_time"':i['arrival']['scheduled'],
+                    'estimated_arrival_time"':i['arrival']['estimated'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'departure_delay':i['departure']['delay'],
+                    'arrival_gate':i['arrival']['gate']
+                }
+                temp.append(d)
+        return temp,r
+    elif option=='c':
+        temp=[]
+        r=0
+        for i in data:
+            if i['departure']['icao'] == parm:
+                r+=1
+                d={
+                    'flight_iata':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'departure_time':i['departure']['actual'],
+                    'arrival_estimated':i['arrival']['estimated'],
+                    'departure_gate':i['departure']['gate'],
+                    'arriva;_gate':i['arrival']['gate'],
+                    'status':i['flight_status']
+                }
+                temp.append(d)
+        return temp,r
+    elif option=='d':
+        temp=[]
+        r=0
+        for i in data:
+            if i['flight']['number'] == parm:
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'departure_gate':i['departure']['gate'],
+                    'departure_terminal':i['departure']['terminal'],
+                    'arrival_airport':i['arrival']['airport'],
+                    'arrival_gate':i['arrival']['gate'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'status':i['flight_status'],
+                    'departure_scheduled':i['departure']['scheduled'],
+                    'arrival_scheduled':i['arrival']['scheduled']
+                }
+                temp.append(d)
+                return temp,r #it is only one flight, no need to waste more time,process
+    return "Not Found","0"
+       
 def opt(option):
     parm="-1"
     option_disp=""
@@ -36,87 +115,28 @@ def opt(option):
     elif option=='d':
         parm=client_socket.recv(1024)
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
-    return parm,option_disp
+    return option_disp,parm
 
-#exit_event = threading.Event()
-
-#TODO: FUNCTION OF CHOICES
-
-def handle_client(client_socket,name):
-    option = client_socket.recv(1024)
-    option=option.decode('ascii')
+def handle_client(client_socket,name,counter):
+    option = client_socket.recv(1024).decode('ascii')
     if option=='quit':
         print(f"{name} has been discconnected")
         client_socket.close()
-    elif option == 'a' : 
-        a_flights = []
-        for flight in data : 
-           if flight.get("flight_status") == "landed" : 
-               result = { 
-                "flight_iata": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "arrival_actual": data[i]["arrival"]["actual"],
-                "arrival_terminal": data[i]["arrival"]["terminal"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-               }
-               a_flight.append(result) 
-        client_socket.send ( json.dumps(a_flights) )
-    
-    elif option == "b" : 
-      d_flights = []
-      for i in data : 
-          if data[i]["arrival"]["delay"] != None:
-            result = {
-                "flight_IATA": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "org_departure_time": data[i]["departure"]["scheduled"],
-                "estimated_arrival_time": data[i]["arrival"]["estimated"],
-                "arrival_terminal": data[i]["arrival"]["terminal"],
-                "departure_delay": data[i]["departure"]["delay"],
-                "arrival_delay": data[i]["arrival"]["delay"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-            }
-            d_flights.append(result)
-      client_socket.send ( json.dumps(d_flights) )
+        return
+    option_disp,parm=opt(option=option)
+    print(f"{counter}. {name} >> asks for {option_disp} ")
+    data,no_of_records=retriveData(option=option,parm=parm)
+    if data=='Not Found' and no_of_records=='0':
+        msg = "Error 404 Not Found"
+        client_socket.send(msg.encode('ascii'))
+    else:
+        #send Number of records
+        client_socket.send(str(no_of_records).encode('ascii'))
 
-    elif option == "c" :
-       specific_flights = []
-       for s in data : 
-           if data[i]["departure"]["icao"] == parm :
-              result = {
-                "flight_iata": data[i]["flight"]["iata"],
-                "departure_airport": data[i]["departure"]["airport"],
-                "departure_scheduled": data[i]["departure"]["scheduled"],
-                "arrival_estimated": data[i]["arrival"]["estimated"],
-                "departure_gate": data[i]["departure"]["gate"],
-                "arrival_gate": data[i]["arrival"]["gate"],
-                "flight_status": data[i]["flight_status"],
-            }
-           specific_flights.append(result)     
-       client_socket.send ( json.dumps(d_flights) )
-
-    elif option == "d" :
-        for i in data : 
-            if data[i]["flight"]["iata"] == parm:
-               result =  {
-                "flight IATA": data[i]["flight"]["iata"],
-                "departure airport": data[i]["departure"]["airport"],
-                "departure gate": data[i]["departure"]["gate"],
-                "departure terminal": data[i]["departure"]["terminal"],
-                "arrival airport": data[i]["arrival"]["airport"],
-                "arrival gate": data[i]["arrival"]["gate"],
-                "arrival terminal": data[i]["arrival"]["terminal"],
-                "departure scheduled": data[i]["departure"]["scheduled"],
-                "arrival scheduled": data[i]["arrival"]["scheduled"],
-            }  
-        client_socket.send ( json.dumps(result) )
-
-    
-    option_disp,parm =opt(option=option)
-    print(f"{name}>> asks for {option_disp}")
-
-    #client_socket.send(response)
-    #client_socket.close()
+        # Send the list to the client
+        response = json.dumps(data)
+        print(response) # FOR TESTING
+        client_socket.send(response.encode('ascii'))
 
 addres=('127.0.0.1',12345) 
 server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -134,5 +154,5 @@ while True:
         client_socket.close()
         continue
     print(f"Accepted Connection No.{counter} with {name}")
-    client_handler= threading.Thread(target=handle_client, args=(client_socket,name))
+    client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
     client_handler.start()
