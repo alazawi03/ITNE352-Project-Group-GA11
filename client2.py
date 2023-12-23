@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk, simpledialog
 import socket
 import json
+import time
+import threading
 
 #TODO: if name==null , name='Unkown"
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -18,26 +20,42 @@ def receive_large_data(sock):
             break
     return data
 
+def destroy():
+    var.set(1)
+    client.send('quit'.encode('ascii'))
+    root.destroy()
+    client.close()
+
 def cs():
     username = username_entry.get()
     client.send(username.encode('ascii'))
-    option_chose = OptionChose.get()
-    client.send(option_chose.encode('ascii'))
-    if option_chose == 'c':
-        parm = optionC_entry.get()
-        client.send(parm.encode('ascii'))
-    elif option_chose == 'd':
-        parm = optionD_entry.get()
-    client.send(parm.encode('ascii'))
-    number_of_records=client.recv(4096).decode('ascii')
-    if number_of_records=='Error 404 Not Found':
-        #TODO: Display Error,..
-        print('ERROR')
-    else:
-        received_data = receive_large_data(client)
-        received_data=received_data.decode('ascii')
-        print(received_data)
-        print(f"RECERIVED {number_of_records} DATA!!")
+    while True:
+        option_chose = OptionChose.get()
+        if option_chose=='quit':
+            destroy()
+            break
+        client.send(option_chose.encode('ascii'))
+        if option_chose == 'c':
+            parm = optionC_entry.get()
+            time.sleep(0.5) #so do not happen error
+            client.send(parm.encode('ascii'))
+        elif option_chose == 'd':
+            parm = optionD_entry.get()
+            time.sleep(0.5) #so do not happen error
+            client.send(parm.encode('ascii'))
+        number_of_records=client.recv(4096).decode('ascii')
+        if number_of_records=='Error 404 Not Found':
+            #TODO: Display Error,..
+            print('ERROR')
+        else:
+            received_data = receive_large_data(client)
+            received_data=received_data.decode('ascii')
+            print(received_data)
+            print(f"RECERIVED {number_of_records} DATA!!")
+
+        buRequest.wait_variable(var)
+        
+        
     
 def toggle_entry_state():
     optionC_label.grid_remove()
@@ -52,9 +70,8 @@ def toggle_entry_state():
         optionD_entry.grid()
 
 def quit_and_change_option():
-    client.send("quit".encode('ascii'))
-    root.destroy()
-    client.close()
+    OptionChose.set('quit')
+    cs()
 
 #START UI
 root = Tk()
@@ -112,7 +129,9 @@ txtRequestedData.grid(row=5, column=1, columnspan=2)
 # Request/Quit - UI
 buRequest = ttk.Button(root, text='Request', command=cs)
 buRequest.grid(row=6, column=3)
-buQuit = ttk.Button(root, text='Quit', command=quit_and_change_option)
+
+var=IntVar()
+buQuit = ttk.Button(root, text='Quit', command=destroy)
 buQuit.grid(row=6, column=2)
 
 

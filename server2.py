@@ -68,7 +68,7 @@ def retriveData(option,parm):
         temp=[]
         r=0
         for i in data:
-            if i['departure']['icao'] == parm:
+            if i['departure']['iata'] == parm:
                 r+=1
                 d={
                     'flight_iata':i['flight']['iata'],
@@ -111,33 +111,36 @@ def opt(option):
     elif option=='b':
         option_disp="B. Delayed Flights"
     elif option=='c':
-        parm=client_socket.recv(1024)
+        parm=client_socket.recv(1024).decode('ascii')
         option_disp=f"C. Flights from Specific City with departure IATA {parm}"
     elif option=='d':
-        parm=client_socket.recv(1024)
+        parm=client_socket.recv(1024).decode('ascii')
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
+    else:
+        print(f"Not found, \n\n {option}")
     return option_disp,parm
 
 def handle_client(client_socket,name,counter):
-    option = client_socket.recv(1024).decode('ascii')
-    if option=='quit':
-        print(f"{name} has been discconnected")
-        client_socket.close()
-        return
-    option_disp,parm=opt(option=option)
-    print(f"{counter}. {name} >> asks for {option_disp} ")
-    data,no_of_records=retriveData(option=option,parm=parm)
-    if data=='Not Found' and no_of_records=='0':
-        msg = "Error 404 Not Found"
-        client_socket.send(msg.encode('ascii'))
-    else:
-        #send Number of records
-        client_socket.send(str(no_of_records).encode('ascii'))
+    while True:
+        option = client_socket.recv(1024).decode('ascii')
+        if option=='quit':
+            print(f"{name} has been discconnected")
+            client_socket.close()
+            return
+        option_disp,parm=opt(option=option)
+        print(f"{counter}. {name} >> asks for {option_disp} ")
+        data,no_of_records=retriveData(option=option,parm=parm)
+        if data=='Not Found' and no_of_records=='0':
+            msg = "Error 404 Not Found"
+            client_socket.send(msg.encode('ascii'))
+        else:
+            #send Number of records
+            client_socket.send(str(no_of_records).encode('ascii'))
 
-        # Send the list to the client
-        response = json.dumps(data, indent=2)
-        print(response) # FOR TESTING
-        client_socket.send(response.encode('ascii'))
+            # Send the list to the client
+            response = json.dumps(data, indent=2)
+            print(response) # FOR TESTING
+            client_socket.send(response.encode('ascii'))
 
 addres=('127.0.0.1',12345) 
 server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
