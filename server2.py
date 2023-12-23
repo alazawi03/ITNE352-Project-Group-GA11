@@ -26,19 +26,71 @@ with open('GA11.json','w') as f:
 
 def retriveData(option,parm):
    with open('GA11.json','r') as rf:
-    data=json.load(rf)
+    data=json.load(rf)['data']
     if option=='a':
-        # Filter objects where 'flight_status' is 'landed'
-        landed_flights = [flight for flight in data['data'] if flight['flight_status'] == 'landed']
-        # Print the filtered flights
-        for flight in landed_flights:
-            print(flight)
+        temp=[]
+        r=0
+        for i in data:
+            if i['flight_status']=='landed':
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'arrival_actual':i['arrival']['actual'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'arrival_gate':i['arrival']['gate']
+                }
+        temp.append(d)
+        return temp,r
     elif option=='b':
-        print("b")
+        for i in data:
+            if i['departure']['delay'] != None:
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'org_departure_time"':i['arrival']['scheduled'],
+                    'estimated_arrival_time"':i['arrival']['estimated'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'departure_delay':i['departure']['delay'],
+                    'arrival_gate':i['arrival']['gate']
+                }
+        temp.append(d)
+        return temp,r
     elif option=='c':
-        print("c")
+        for i in data:
+            if i['departure']['icao'] == parm:
+                r+=1
+                d={
+                    'flight_iata':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'departure_time':i['departure']['actual'],
+                    'arrival_estimated':i['arrival']['estimated'],
+                    'departure_gate':i['departure']['gate'],
+                    'arriva;_gate':i['arrival']['gate'],
+                    'status':i['flight_status']
+                }
+        temp.append(d)
+        return temp,r
     elif option=='d':
-        print("d")
+        for i in data:
+            if i['flight']['number'] == parm:
+                r+=1
+                d={
+                    'flight_IATA':i['flight']['iata'],
+                    'departure_airport':i['departure']['airport'],
+                    'departure_gate':i['departure']['gate'],
+                    'departure_terminal':i['departure']['terminal'],
+                    'arrival_airport':i['arrival']['airport'],
+                    'arrival_gate':i['arrival']['gate'],
+                    'arrival_terminal':i['arrival']['terminal'],
+                    'status':i['flight_status'],
+                    'departure_scheduled':i['departure']['scheduled'],
+                    'arrival_scheduled':i['arrival']['scheduled']
+                }
+                break #it is only one flight, no need to waste more time,process
+        temp.append(d)
+        return temp,r
        
 def opt(option):
     parm="-1"
@@ -55,17 +107,15 @@ def opt(option):
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
     return option_disp,parm
 
-def handle_client(client_socket,name):
-    option = client_socket.recv(1024)
-    option=option.decode('ascii')
+def handle_client(client_socket,name,counter):
+    option = client_socket.recv(1024).decode('ascii')
     if option=='quit':
         print(f"{name} has been discconnected")
         client_socket.close()
         return
     option_disp,parm=opt(option=option)
-    print(f"{name} >> asks for {option_disp}")
-    retriveData(option=option,parm=parm)
-
+    print(f"{counter}. {name} >> asks for {option_disp} ")
+    data,no_of_records=retriveData(option=option,parm=parm)
     #client_socket.send(response)
     #client_socket.close()
 
@@ -85,5 +135,5 @@ while True:
         client_socket.close()
         continue
     print(f"Accepted Connection No.{counter} with {name}")
-    client_handler= threading.Thread(target=handle_client, args=(client_socket,name))
+    client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
     client_handler.start()
