@@ -5,7 +5,7 @@ import threading
 
 #TODO: ERROR HANDEL
 #TODO: 
-
+'''
 #1. Ask the user to enter arr_icao
 arr_icao=input("Please enter airport code: ")
 
@@ -25,6 +25,7 @@ data = response.json()
 with open('GA11.json','w') as f:
     json.dump(data, f, indent=2)
     print("File saved") #TODO: better message
+'''
 
 #4. Wait for client requests to connect (at least 3 connections)
 
@@ -134,7 +135,7 @@ def handle_client(client_socket,name,counter):
         client_socket.send(str(no_of_records).encode('ascii'))
 
         # Send the list to the client
-        response = json.dumps(data)
+        response = json.dumps(data, indent=2)
         print(response) # FOR TESTING
         client_socket.send(response.encode('ascii'))
 

@@ -7,6 +7,17 @@ import json
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 client.connect(('127.0.0.1',12345))
 
+def receive_large_data(sock):
+    BUFF_SIZE = 4096 # 4 KiB
+    data = b''
+    while True:
+        part = sock.recv(BUFF_SIZE)
+        data += part
+        if len(part) < BUFF_SIZE:
+            # either 0 or end of data
+            break
+    return data
+
 def cs():
     username = username_entry.get()
     client.send(username.encode('ascii'))
@@ -23,10 +34,10 @@ def cs():
         #TODO: Display Error,..
         print('ERROR')
     else:
-        received_data = client.recv(4096).decode('ascii')
-        parsed_data = json.loads(received_data)
+        received_data = receive_large_data(client)
+        received_data=received_data.decode('ascii')
+        print(received_data)
         print(f"RECERIVED {number_of_records} DATA!!")
-        print(parsed_data)
     
 def toggle_entry_state():
     optionC_label.grid_remove()
