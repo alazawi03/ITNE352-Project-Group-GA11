@@ -1,9 +1,8 @@
 from tkinter import *
-from tkinter import ttk, simpledialog
+from tkinter import ttk
 import socket
-import json
 import time
-import threading
+
 
 #TODO: if name==null , name='Unkown"
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -28,6 +27,8 @@ def destroy():
 def connect_first_time():
     username = username_entry.get()
     client.send(username.encode('ascii'))
+    username_entry.config(state='disabled')
+
 
 def requestClicked():
         cs(True)
@@ -76,8 +77,9 @@ def quit_and_change_option():
     OptionChose.set('quit')
     cs()
 
-#START UI
+
 root = Tk()
+
 # option C
 optionC_label = ttk.Label(root, text="Enter departure IATA: ")
 optionC_label.grid(row=4, column=1)
@@ -135,7 +137,8 @@ buRequest.grid(row=6, column=3)
 buQuit = ttk.Button(root, text='Quit', command=destroy) 
 buQuit.grid(row=6, column=2)
 
-
+buConnect = ttk.Button(root, text='Connect', command=connect_first_time)
+buConnect.grid(row=1, column=1, columnspan=2)
 
 
 root.mainloop()
