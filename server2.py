@@ -123,13 +123,23 @@ def opt(option):
 def handle_client(client_socket,name,counter):
     while True:
         option = client_socket.recv(1024).decode('ascii')
+        print("\n\n", 25*"*","\n\n" )
+        print(option)
+        print("\n\n", 25*"*","\n\n" )
         if option=='quit':
             print(f"{name} has been discconnected")
             client_socket.close()
             return
         option_disp,parm=opt(option=option)
+  
+
         print(f"{counter}. {name} >> asks for {option_disp} ")
         data,no_of_records=retriveData(option=option,parm=parm)
+        print("\n\n", 25*"*","\n\n" )
+        print(data)
+        print(no_of_records)
+        print("\n\n", 25*"*","\n\n" )
+
         if data=='Not Found' and no_of_records=='0':
             msg = "Error 404 Not Found"
             client_socket.send(msg.encode('ascii'))

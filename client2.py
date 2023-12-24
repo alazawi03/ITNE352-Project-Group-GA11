@@ -21,15 +21,21 @@ def receive_large_data(sock):
     return data
 
 def destroy():
-    var.set(1)
     client.send('quit'.encode('ascii'))
     root.destroy()
     client.close()
 
-def cs():
+def connect_first_time():
     username = username_entry.get()
     client.send(username.encode('ascii'))
-    while True:
+
+def requestClicked():
+        cs(True)
+
+def cs(isCliked):
+    print("This time")
+    while isCliked==True:
+        isCliked=False
         option_chose = OptionChose.get()
         if option_chose=='quit':
             destroy()
@@ -52,9 +58,6 @@ def cs():
             received_data=received_data.decode('ascii')
             print(received_data)
             print(f"RECERIVED {number_of_records} DATA!!")
-
-        buRequest.wait_variable(var)
-        
         
     
 def toggle_entry_state():
@@ -120,19 +123,19 @@ rb3.grid(row=3, column=1)
 rb4 = ttk.Radiobutton(root, text='D. Details of a Particular Flight', variable=OptionChose, value="d", command=toggle_entry_state)
 rb4.grid(row=3, column=2)
 
-
 # Requested Data - UI
 ttk.Label(root, text="The Requested data:").grid(row=5, column=0)
 txtRequestedData = Text(root, width=30, height=15, font=font1)
 txtRequestedData.grid(row=5, column=1, columnspan=2)
 
 # Request/Quit - UI
-buRequest = ttk.Button(root, text='Request', command=cs)
+buRequest = ttk.Button(root, text='Request', command=requestClicked)
 buRequest.grid(row=6, column=3)
 
-var=IntVar()
-buQuit = ttk.Button(root, text='Quit', command=destroy)
+buQuit = ttk.Button(root, text='Quit', command=destroy) 
 buQuit.grid(row=6, column=2)
+
+
 
 
 root.mainloop()
