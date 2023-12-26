@@ -4,6 +4,8 @@ import socket
 import time
 import json
 
+#TODO: C,D switch will lead to error 
+
 root = Tk()#Create the GUI object
 #GUI Style touches
 root.title('Flight Client')
@@ -14,12 +16,22 @@ style.configure('TLabel', background='#e1d8b2')
 style.configure('TButton', background='#e1d8b2')
 style.configure('TRadioButton', background='#e1d8b2')
 
-#The client connect to server as it starts
-client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-time.sleep(0.5) #short waiting time in case client and server scripts both start at the same time
-client.connect(('127.0.0.1',12345))
+def connect_to_server():
+    while True:
+        try:
+            client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            server_address = ('127.0.0.1', 12345)
+            client.connect(server_address)
+            print("Connected to the server.")
+            return client
+        except Exception as e:
+            print(f"Connection failed: {e}")
+            time.sleep(5)  # Wait for 5 seconds before retrying
+
+client=connect_to_server()
 
 def handle_connection(isCliked):
+    
     while isCliked==True:
         isCliked=False #Will become True if Request button is clicked in GUI
         option_chose = OptionChose.get() #OptioChose() value is derived from the GUI
@@ -40,8 +52,11 @@ def handle_connection(isCliked):
             time.sleep(0.5) #so do not happen error
             client.send(parm.encode('ascii'))
 
-        received_data = receive_large_data(client)
-        print_as_table(json.loads(received_data),option_chose)
+        try:
+            received_data = receive_large_data(client)
+            print_as_table(json.loads(received_data), option_chose)
+        except json.JSONDecodeError as e:
+            print(f"JSON decoding error: {e}")
 
 #Terminate everything
 def destroy():
@@ -215,7 +230,9 @@ optionD_label = ttk.Label(root, text='Enter Flight IATA: ')
 optionD_label.grid(row=4, column=1)
 optionD_entry = ttk.Entry(root)
 optionD_entry.grid(row=4, column=2)
-optionD_label.grid_remove()
+optionD_label.grid_remove() 
+optionD_entry.grid_remove()
+
 def toggle_entry_state():
     optionC_label.grid_remove()
     optionC_entry.grid_remove()
@@ -227,7 +244,6 @@ def toggle_entry_state():
     elif OptionChose.get() == 'd':
         optionD_label.grid()
         optionD_entry.grid()
-        optionD_entry.grid_remove()
 
 # Choose Option -- a/b/c/d (GUI)
 OptionChose = StringVar()
