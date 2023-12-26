@@ -5,11 +5,11 @@ import threading
 
 #TODO: ERROR HANDEL
 #TODO: HANDLE CLIENT CLOSEE UNEXPECTEDLY ??
-'''
-#1. Ask the user to enter arr_icao
+
+#Ask the user to enter arr_icao
 arr_icao=input("Please enter airport code: ")
 
-#2. Retrive 100 records of flight at the specefied airport
+#Retrive 100 records of flight at the specefied airport
 API_ACCESS_KEY = "ec9a339729e37e6f9dcb2531ca197d4e"
 API_ENDPOINT = "http://api.aviationstack.com/v1/flights"
 RECORDS=100
@@ -21,24 +21,20 @@ request_params = {
 response = requests.get(API_ENDPOINT, params=request_params)
 data = response.json()
 
-#3. Store the retrived data in JSON file caleed "group_ID.json"
+#Store the retrived data in JSON file caleed "group_ID.json"
 with open('GA11.json','w') as f:
     json.dump(data, f, indent=2)
-    print("File saved") #TODO: better message
-'''
+    print("Server >> The data has been retrieved successfully and stored in the server storage")
 
-#4. Wait for client requests to connect (at least 3 connections)
-
+#This function {retriveData} will be called to cache the data before sending it to the client 
 def retriveData(option,parm):
    with open('GA11.json','r') as rf:
     data=json.load(rf)['data']
     if option=='a':
         temp=[]
-        r=0
         for i in data:
             if i['flight_status']=='landed':
-                r+=1
-                d={
+                tempFlight={
                     'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'arrival_actual':i['arrival']['actual'],
@@ -46,14 +42,13 @@ def retriveData(option,parm):
                     'arrival_gate':i['arrival']['gate']
                 }
                 temp.append(d)
-        return temp,r
+        return temp
+    
     elif option=='b':
         temp=[]
-        r=0
         for i in data:
             if i['arrival']['delay'] != None:
-                r+=1
-                d={
+                tempFlight={
                     'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'org_departure_time':i['arrival']['scheduled'],
@@ -62,15 +57,14 @@ def retriveData(option,parm):
                     'departure_delay':i['departure']['delay'],
                     'arrival_gate':i['arrival']['gate']
                 }
-                temp.append(d)
-        return temp,r
+                temp.append(tempFlight)
+        return temp
+    
     elif option=='c':
         temp=[]
-        r=0
         for i in data:
             if i['departure']['iata'] == parm:
-                r+=1
-                d={
+                tempFlight={
                     'flight_iata':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'departure_time':i['departure']['actual'],
@@ -79,15 +73,14 @@ def retriveData(option,parm):
                     'arrival_gate':i['arrival']['gate'],
                     'status':i['flight_status']
                 }
-                temp.append(d)
-        return temp,r
-    elif option=='d':
+                temp.append(tempFlight)
+        return temp
+    
+    else: #option d
         temp=[]
-        r=0
         for i in data:
             if i['flight']['number'] == parm:
-                r+=1
-                d={
+                tempFlight={
                     'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'departure_gate':i['departure']['gate'],
@@ -99,13 +92,14 @@ def retriveData(option,parm):
                     'departure_scheduled':i['departure']['scheduled'],
                     'arrival_scheduled':i['arrival']['scheduled']
                 }
-                temp.append(d)
-                return temp,r #it is only one flight, no need to waste more time,process
-    return "Not Found","0"
-       
+                temp.append(tempFlight)
+                return temp #it is only one flight, no need to waste more time,process
+
+#This function is just used to format the message to print it
 def opt(option):
     parm="-1"
     option_disp=""
+
     if option=='a':
         option_disp="A. Arrived Flights"
     elif option=='b':
@@ -116,57 +110,42 @@ def opt(option):
     elif option=='d':
         parm=client_socket.recv(1024).decode('ascii')
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
-    else:
-        print(f"Not found, \n\n {option}")
+
     return option_disp,parm
 
 def handle_client(client_socket,name,counter):
     while True:
-        option = client_socket.recv(1024).decode('ascii')
-        print("\n\n", 25*"*","\n\n" )
-        print(option)
-        print("\n\n", 25*"*","\n\n" )
+        option = client_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
+        #quit case
         if option=='quit':
             print(f"{name} has been discconnected")
             client_socket.close()
             return
-        option_disp,parm=opt(option=option)
-  
-
+        
+        option_disp,parm=opt(option=option) #format the option to print it
         print(f"{counter}. {name} >> asks for {option_disp} ")
-        data,no_of_records=retriveData(option=option,parm=parm)
-        print("\n\n", 25*"*","\n\n" )
-        print(data)
-        print(no_of_records)
-        print("\n\n", 25*"*","\n\n" )
 
-        if data=='Not Found' and no_of_records=='0':
-            msg = "Error 404 Not Found"
-            client_socket.send(msg.encode('ascii'))
-        else:
-            #send Number of records
-            client_socket.send(str(no_of_records).encode('ascii'))
+        data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
+        client_socket.send(response.encode('ascii'))
 
-            # Send the list to the client
-            response = json.dumps(data, indent=2)
-            print(response) # FOR TESTING
-            client_socket.send(response.encode('ascii'))
-
+#Wait for client requests to connect (at least 3 connections)
 addres=('127.0.0.1',12345) 
 server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(addres)
-server.listen(5) #at least 3, can be 5
+server.listen(3)
 print(f"Server listening on {addres}")
 
-counter=0
+counter=0 #Count the connections in the server
 while True:
     counter+=1
     client_socket, addr = server.accept()
     client_name = client_socket.recv(1024)
     name=client_name.decode('ascii')
-    if name=='quit':
+    if name=='quit': #in case the client quit before putting his name
         client_socket.close()
         continue
     print(f"Accepted Connection No.{counter} with {name}")
+    
+    #Each client will have 
     client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
     client_handler.start()
