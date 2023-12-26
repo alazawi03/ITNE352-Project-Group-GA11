@@ -4,7 +4,7 @@ import socket
 import threading
 
 #TODO: ERROR HANDEL
-#TODO: 
+#TODO: HANDLE CLIENT CLOSEE UNEXPECTEDLY ??
 '''
 #1. Ask the user to enter arr_icao
 arr_icao=input("Please enter airport code: ")
@@ -51,13 +51,13 @@ def retriveData(option,parm):
         temp=[]
         r=0
         for i in data:
-            if i['departure']['delay'] != None:
+            if i['arrival']['delay'] != None:
                 r+=1
                 d={
                     'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
-                    'org_departure_time"':i['arrival']['scheduled'],
-                    'estimated_arrival_time"':i['arrival']['estimated'],
+                    'org_departure_time':i['arrival']['scheduled'],
+                    'estimated_arrival_time':i['arrival']['estimated'],
                     'arrival_terminal':i['arrival']['terminal'],
                     'departure_delay':i['departure']['delay'],
                     'arrival_gate':i['arrival']['gate']
@@ -76,7 +76,7 @@ def retriveData(option,parm):
                     'departure_time':i['departure']['actual'],
                     'arrival_estimated':i['arrival']['estimated'],
                     'departure_gate':i['departure']['gate'],
-                    'arriva;_gate':i['arrival']['gate'],
+                    'arrival_gate':i['arrival']['gate'],
                     'status':i['flight_status']
                 }
                 temp.append(d)
