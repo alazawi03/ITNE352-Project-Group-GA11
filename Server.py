@@ -4,7 +4,7 @@ import socket
 import threading
 
 #TODO: ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
+#TODO: timeout
 
 #Ask the user to enter arr_icao
 arr_icao=input("Please enter airport code: ")
@@ -84,7 +84,7 @@ def retriveData(option,parm):
         for i in data:
             if i['departure']['iata'] == parm:
                 tempFlight={
-                    'flight_iata':i['flight']['iata'],
+                    'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'departure_time':i['departure']['actual'],
                     'arrival_estimated':i['arrival']['estimated'],

@@ -5,6 +5,7 @@ import time
 import json
 
 #TODO: C,D switch will lead to error 
+#TODO: can not request C,D if parms empty
 
 root = Tk()#Create the GUI object
 #GUI Style touches
@@ -22,7 +23,6 @@ def connect_to_server():
             client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             server_address = ('127.0.0.1', 12345)
             client.connect(server_address)
-            print("Connected to the server.")
             return client
         except Exception as e:
             print(f"Connection failed: {e}")
@@ -31,32 +31,30 @@ def connect_to_server():
 client=connect_to_server()
 
 def handle_connection(isCliked):
+    #Will become True if Request button is clicked in GUI
+    option_chose = OptionChose.get() #OptioChose() value is derived from the GUI
+
+    if option_chose=='quit':
+        destroy() 
+        return
     
-    while isCliked==True:
-        isCliked=False #Will become True if Request button is clicked in GUI
-        option_chose = OptionChose.get() #OptioChose() value is derived from the GUI
+    client.send(option_chose.encode('ascii')) #a or b or c or d
 
-        if option_chose=='quit':
-            destroy() 
-            break #exit the loop (then the function)
+    #C/D need paramter from the client
+    if option_chose == 'c': 
+        parm = optionC_entry.get()
+        time.sleep(0.5) #so do not happen error
+        client.send(parm.encode('ascii'))
+    elif option_chose == 'd':
+        parm = optionD_entry.get()
+        time.sleep(0.5) #so do not happen error
+        client.send(parm.encode('ascii'))
 
-        client.send(option_chose.encode('ascii')) #a or b or c or d
-
-        #C/D need paramter from the client
-        if option_chose == 'c': 
-            parm = optionC_entry.get()
-            time.sleep(0.5) #so do not happen error
-            client.send(parm.encode('ascii'))
-        elif option_chose == 'd':
-            parm = optionD_entry.get()
-            time.sleep(0.5) #so do not happen error
-            client.send(parm.encode('ascii'))
-
-        try:
-            received_data = receive_large_data(client)
-            print_as_table(json.loads(received_data), option_chose)
-        except json.JSONDecodeError as e:
-            print(f"JSON decoding error: {e}")
+    try:
+        received_data = receive_large_data(client)
+        print_as_table(json.loads(received_data), option_chose)
+    except json.JSONDecodeError as e:
+        print(f"JSON decoding error: {e}")
 
 #Terminate everything
 def destroy():
@@ -77,17 +75,19 @@ def receive_large_data(sock):
     return data.decode('ascii')
 
 #print the received data into the GUI
-def print_as_table(rcvData,opt):
+table = ttk.Treeview(root)
 
-    if opt=='a':
-        table = ttk.Treeview(root, columns=(0,1,2,3,4))
-        table.grid(row=5, column=1, columnspan=2)
-        table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
-        table.heading(0, text='flight_IATA')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='arrival_actual')
-        table.heading(3, text='arrival_terminal')
-        table.heading(4, text='arrival_gate')
+def print_as_table(rcvData,opt):
+    global table
+    table.col
+    table.grid(row=5, column=1, columnspan=2)
+    table.column('#0', width=0, stretch=NO)  # hide the default column by tkinter library
+
+    if opt == 'a':
+        columns = ['flight_IATA', 'departure_airport', 'arrival_actual', 'arrival_terminal', 'arrival_gate']
+        for i in range(1, len(columns) + 1):
+            table.heading(i, text=columns[i-1])
+
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -97,18 +97,11 @@ def print_as_table(rcvData,opt):
                 data = (frst,scnd,thrd,forth,fifth)
                 table.insert(parent = '', index = 0, values = data)
 
-
-    elif opt=='b':
-        table = ttk.Treeview(root, columns=(0, 1, 2, 3, 4,5,6))
-        table.grid(row=5, column=1, columnspan=2)
-        table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
-        table.heading(0, text='flight_IATA')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='org_departure_time')
-        table.heading(3, text='estimated_arrival_time')
-        table.heading(4, text='arrival_terminal')
-        table.heading(5, text='departure_delay')
-        table.heading(6, text='arrival_gate')
+    elif opt == 'b':
+        columns = ['flight_IATA', 'departure_airport', 'org_departure_time', 'estimated_arrival_time',
+                'arrival_terminal', 'departure_delay', 'arrival_gate']
+        for i in range(len(columns)):
+            table.heading(i, text=columns[i])
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -120,64 +113,26 @@ def print_as_table(rcvData,opt):
                 data = (frst,scnd,thrd,forth,fifth,sixth,seventh)
                 table.insert(parent = '', index = 0, values = data)
 
-
-    elif opt=='c':
-        table = ttk.Treeview(root, columns=(0, 1, 2, 3, 4,5,6))
-        table.grid(row=5, column=1, columnspan=2)
-        table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
-        table.heading(0, text='flight_iata')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='org_departure_time')
-        table.heading(3, text='estimated_arrival_time')
-        table.heading(4, text='departure_gate')
-        table.heading(5, text='arrival_gate')
-        table.heading(6, text='status')
+    elif opt == 'c':
+        columns = ['flight_IATA', 'departure_airport', 'org_departure_time', 'estimated_arrival_time',
+                'departure_gate', 'arrival_gate', 'status']
+        for i in range(len(columns)):
+            table.heading(i, text=columns[i])
         for flight in rcvData:
-                frst = flight['flight_iata'],
-                scnd = flight['departure_airport'],
-                thrd = flight['departure_time'],
-                forth = flight['arrival_estimated'],
-                fifth = flight['departure_gate']
-                sixth = flight['arrival_gate']
-                seventh = flight['status']
-                data = (frst,scnd,thrd,forth,fifth,sixth,seventh)
-                table.insert(parent = '', index = 0, values = data)
-
-                
-    elif opt=='d':
-        table = ttk.Treeview(root, columns=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
-        table.grid(row=5, column=1, columnspan=2)
-        table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
-
-        table.heading(0, text='flight_IATA')
-        table.column(0, width=70)
-
-        table.heading(1, text='departure_airport')
-        table.column(1, width=180)
-
-        table.heading(2, text='departure_gate')
-        table.column(2, width=90)
-
-        table.heading(3, text='departure_terminal')
-        table.column(3, width=120, stretch=YES)
-
-        table.heading(4, text='arrival_airport')
-        table.column(4, width=120, stretch=YES)
-
-        table.heading(5, text='arrival_gate')
-        table.column(5, width=70)
-
-        table.heading(6, text='arrival_terminal')
-        table.column(6, width=90)
-
-        table.heading(7, text='status')
-        table.column(7, width=70)
-
-        table.heading(8, text='departure_scheduled')
-        table.column(8, width=150)
-
-        table.heading(9, text='arrival_scheduled')
-        table.column(9, width=150)
+            frst = flight['flight_IATA'],
+            scnd = flight['departure_airport'],
+            thrd = flight['departure_time'],
+            forth = flight['arrival_estimated'],
+            fifth = flight['departure_gate']
+            sixth = flight['arrival_gate']
+            seventh = flight['status']
+            data = (frst,scnd,thrd,forth,fifth,sixth,seventh)
+            table.insert(parent = '', index = 0, values = data)
+    
+    elif opt == 'd':
+        columns = ['flight_IATA', 'departure_airport', 'departure_gate', 'departure_terminal','arrival_airport', 'arrival_gate', 'arrival_terminal', 'status', 'departure_scheduled', 'arrival_scheduled']
+        for i in range(len(columns)):
+            table.heading(i, text=columns[i])
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -191,6 +146,7 @@ def print_as_table(rcvData,opt):
                 ten = flight['arrival_scheduled']
                 data = (frst,scnd,thrd,forth,fifth,sixth,seventh,eight,nine,ten)
                 table.insert(parent = '', index = 0, values = data)
+
 
 #The username will be asked first
 username_label = ttk.Label(root, text='Username: ')
