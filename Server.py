@@ -2,12 +2,11 @@ import requests
 import json
 import socket
 import threading
-
-#TODO: ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-#TODO: timeout
-
+#TODO: no need for 2 with open
+#TODO: error handle {sent 2 tawfeeq}
+saved=True
 #Ask the user to enter arr_icao
-arr_icao=input("Please enter airport code: ")
+""" arr_icao=input("Please enter airport code: ")
 
  #Retrive 100 records of flight at the specefied airport
 API_ACCESS_KEY = "ec9a339729e37e6f9dcb2531ca197d4e"
@@ -29,23 +28,24 @@ try:
     data = api_result.json()
     with open('GA11.json', 'w') as f:
         json.dump(data, f, indent=2)
-        print(f"Server >> {arr_icao} airport data was saved into storage") 
+        print(f"Server >> {arr_icao} airport data was saved into storage")
 
 except requests.exceptions.RequestException as e:
     # Handle exceptions related to making API requests
-    print(f"Error making API request: {e}")
+    print(f"Error making API request: {e}  \nPlease Fix the error and restart the server.")
+    saved=False
 
 except json.JSONDecodeError as e:
     # Handle JSON decoding errors
-    print(f"Error decoding JSON: {e}")
+    print(f"Error decoding JSON: {e}  \nPlease Fix the error and restart the server.")
+    saved=False
 
 except Exception as e:
     # Handle other unexpected exceptions
-    print(f"An unexpected error occurred: {e}")
-
-print("\n"," ✈️ "*15,"\n")
-
-#This function {retriveData} will be called to cache the data before sending it to the client 
+    print(f"\nAn unexpected error occurred: {e}  \nPlease Fix the error and restart the server.")
+    saved=False
+ """
+#This function {retriveData} will be called to cache the data before sending it to the client  """
 def retriveData(option,parm):
    with open('GA11.json','r') as rf:
     data=json.load(rf)['data']
@@ -84,7 +84,7 @@ def retriveData(option,parm):
         for i in data:
             if i['departure']['iata'] == parm:
                 tempFlight={
-                    'flight_IATA':i['flight']['iata'],
+                    'flight_iata':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
                     'departure_time':i['departure']['actual'],
                     'arrival_estimated':i['arrival']['estimated'],
@@ -134,39 +134,51 @@ def opt(option):
 
 def handle_client(client_socket,name,counter):
     while True:
-        option = client_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
-        if option=='quit' or not option:   #quit case
-            print(f"{name} has been discconnected")
-            client_socket.close()
-            return
+        try:
+            option = client_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
         
-        option_disp,parm=opt(option=option) #format the option to print it
-        print(f"{counter}. {name} >> asks for {option_disp} ")
+            if option=='quit':   #quit case
+                print(f"{counter}.{name} >> has been discconnected")
+                client_socket.close()
+                return
+            
+            option_disp,parm=opt(option=option) #format the option to print it
+            print(f"{counter}. {name} >> asks for {option_disp} ")
+            data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
+            client_socket.send(json.dumps(data, indent=2).encode('ascii'))
+            
+        except socket.timeout:
+            print(f"{counter}.{name} >> timeout; disconnected...") 
+            client_socket.close()
+            break
+        except ConnectionAbortedError:
+            print(f"{counter}.{name} >> connection aborted; disconnected...")
+            client_socket.close()
+            break
+        except Exception as e:
+            print(f"{counter}.{name} >> an unexpected error occurred: {e}")
+            client_socket.close()
 
-        data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
-        client_socket.send(json.dumps(data, indent=2).encode('ascii'))
-
-#Wait for client requests to connect (at least 3 connections)
-addres=('127.0.0.1',12345) 
-server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(addres)
-server.listen(3)
-print(f"Server listening on {addres}")
-
-counter=0 #Count the connections in the server
-while True:
-    
-    try:
+if saved:
+    #Wait for client requests to connect (at least 3 connections)
+    addres=('127.0.0.1',12345) 
+    server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(addres)
+    server.settimeout(120)
+    server.listen(3)
+    print(f"Server listening on {addres}")
+    print(2*"\n"," ✈️ "*7," Welcome to Server"," ✈️ "*7,2*"\n")
+    counter=0 #Count the connections in the server
+    while True:   
         client_socket, addr = server.accept()
-    except socket.timeout:
-        print("Connection timeout. Server can't handle the client right now.") 
-    counter+=1 
-    client_name = client_socket.recv(1024)
-    name=client_name.decode('ascii')
-    if name=='quit': #in case the client quit before putting his name
-        client_socket.close()
-        continue
-    print(f"Accepted Connection No.{counter} with {name}")
-    #Each client will have 
-    client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
-    client_handler.start()
+        counter+=1 
+        client_name = client_socket.recv(1024)
+        name=client_name.decode('ascii')
+        if name=='quit': #in case the client quit before putting his name
+            client_socket.close()
+            continue
+        print(f"Accepted Connection No.{counter} with {name}")
+        #Each client will have 
+        client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
+        client_handler.start()
+        
