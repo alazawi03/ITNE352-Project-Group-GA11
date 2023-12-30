@@ -2,11 +2,10 @@ import requests
 import json
 import socket
 import threading
-#TODO: no need for 2 with open
-#TODO: error handle {sent 2 tawfeeq}
+
 saved=True
 #Ask the user to enter arr_icao
-""" arr_icao=input("Please enter airport code: ")
+arr_icao=input("Please enter airport code: ")
 
  #Retrive 100 records of flight at the specefied airport
 API_ACCESS_KEY = "ec9a339729e37e6f9dcb2531ca197d4e"
@@ -44,7 +43,7 @@ except Exception as e:
     # Handle other unexpected exceptions
     print(f"\nAn unexpected error occurred: {e}  \nPlease Fix the error and restart the server.")
     saved=False
- """
+
 #This function {retriveData} will be called to cache the data before sending it to the client  """
 def retriveData(option,parm):
    with open('GA11.json','r') as rf:
@@ -138,7 +137,7 @@ def handle_client(client_socket,name,counter):
             option = client_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
         
             if option=='quit':   #quit case
-                print(f"{counter}.{name} >> has been discconnected")
+                print(f"{counter}. {name} >> has been discconnected")
                 client_socket.close()
                 return
             
@@ -146,25 +145,17 @@ def handle_client(client_socket,name,counter):
             print(f"{counter}. {name} >> asks for {option_disp} ")
             data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
             client_socket.send(json.dumps(data, indent=2).encode('ascii'))
-            
-        except socket.timeout:
-            print(f"{counter}.{name} >> timeout; disconnected...") 
+        except (ConnectionAbortedError or ConnectionResetError):
+            print(f"{counter}. {name} >> connection aborted; disconnected...")
             client_socket.close()
             break
-        except ConnectionAbortedError:
-            print(f"{counter}.{name} >> connection aborted; disconnected...")
-            client_socket.close()
-            break
-        except Exception as e:
-            print(f"{counter}.{name} >> an unexpected error occurred: {e}")
-            client_socket.close()
+        
 
 if saved:
     #Wait for client requests to connect (at least 3 connections)
     addres=('127.0.0.1',12345) 
     server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind(addres)
-    server.settimeout(120)
     server.listen(3)
     print(f"Server listening on {addres}")
     print(2*"\n"," ✈️ "*7," Welcome to Server"," ✈️ "*7,2*"\n")

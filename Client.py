@@ -5,6 +5,8 @@ import time
 import json
 
 root = Tk()#Create the GUI object
+table = ttk.Treeview(root, columns=(0,1,2,3,4,5,6,7,8,9)) #Identified it here, so i can use it inside below functions
+
 #GUI Style touches
 root.title('Flight Client')
 style = ttk.Style()
@@ -14,6 +16,7 @@ style.configure('TLabel', background='#e1d8b2')
 style.configure('TButton', background='#e1d8b2')
 style.configure('TRadioButton', background='#e1d8b2')
 
+#will not stop trying until connect
 def connect_to_server():
     while True:
         try:
@@ -40,20 +43,24 @@ def handle_connection():
         #C/D need paramter from the client
         if option_chose == 'c': 
             parm = optionC_entry.get().upper()
-            time.sleep(0.5) #so do not happen error
+            time.sleep(0.5) #If not, an error can happen where option parm is sent before option chose, which is not what expected by the server 
             client.send(parm.encode('ascii'))
         elif option_chose == 'd':
             parm = optionD_entry.get().upper()
-            time.sleep(0.5) #so do not happen error
+            time.sleep(0.5) #If not, an error can happen where option parm is sent before option chose, which is not what expected by the server 
             client.send(parm.encode('ascii'))
 
         try:
-            received_data = receive_large_data(client)
-            global table
-            table.delete(*table.get_children())
+            received_data = receive_large_data(client) #use function to receive large data
+                
+            table.delete(*table.get_children()) #To preparte for new insertion
+
             print_as_table(json.loads(received_data), option_chose)
         except json.JSONDecodeError as e:
             print(f"JSON decoding error: {e}")
+        except Exception as e:
+            # Handle other unexpected exceptions
+            print(f"\nAn unexpected error occurred: {e}  \nPlease Fix the error and restart the server.")
 
 #Terminate everything
 def destroy():
@@ -74,12 +81,11 @@ def receive_large_data(sock):
     return data.decode('ascii')
 
 #print the received data into the GUI
-table = ttk.Treeview(root, columns=(0,1,2,3,4,5,6,7,8,9))
 table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
 
 def print_as_table(rcvData,opt):
-    global table
     table.grid(row=5, column=1, columnspan=2)
+
     if opt=='a':
         table.heading(0, text='flight_IATA')
         table.heading(1, text='departure_airport')
@@ -182,6 +188,7 @@ def print_as_table(rcvData,opt):
                 ten = flight['arrival_scheduled']
                 data = (frst,scnd,thrd,forth,fifth,sixth,seventh,eight,nine,ten)
                 table.insert(parent = '', index = 0, values = data)
+
 #The username will be asked first
 username_label = ttk.Label(root, text='Username: ')
 username_label.grid(row=0, column=0)
@@ -204,6 +211,7 @@ def connect_first_time():
     rb2.grid(row=2, column=2)
     rb3.grid(row=3, column=1)
     rb4.grid(row=3, column=2)
+
 buConnect = ttk.Button(root, text='Connect', command=connect_first_time)
 buConnect.grid(row=1, column=1, columnspan=2)
 
