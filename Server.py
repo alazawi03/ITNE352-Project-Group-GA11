@@ -123,34 +123,33 @@ def opt(option):
     elif option=='b':
         option_disp="B. Delayed Flights"
     elif option=='c':
-        parm=client_socket.recv(1024).decode('ascii')
+        parm=server_socket.recv(1024).decode('ascii')
         option_disp=f"C. Flights from Specific City with departure IATA {parm}"
     elif option=='d':
-        parm=client_socket.recv(1024).decode('ascii')
+        parm=server_socket.recv(1024).decode('ascii')
         option_disp=f"D. Details of a Particular Flight with flight number {parm}"
 
     return option_disp,parm
 
-def handle_client(client_socket,name,counter):
+def handle_client(server_socket , name , counter):
     while True:
         try:
-            option = client_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
-        
-            if option=='quit':   #quit case
-                print(f"{counter}. {name} >> has been discconnected")
-                client_socket.close()
-                return
-            
-            option_disp,parm=opt(option=option) #format the option to print it
-            print(f"{counter}. {name} >> asks for {option_disp} ")
-            data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
-            client_socket.send(json.dumps(data, indent=2).encode('ascii'))
-        except (ConnectionAbortedError or ConnectionResetError):
+            option = server_socket.recv(1024).decode('ascii') #a/b/c/d or quit will be received from the client
+        except (ConnectionAbortedError or ConnectionResetError or KeyboardInterrupt):
             print(f"{counter}. {name} >> connection aborted; disconnected...")
-            client_socket.close()
+            server_socket.close()
             break
+        if option=='quit':   #quit case
+            print(f"{counter}. {name} >> has been discconnected")
+            server_socket.close()
+            return
         
-
+        option_disp,parm=opt(option=option) #format the option to print it
+        print(f"{counter}. {name} >> asks for {option_disp} ")
+        data=retriveData(option=option,parm=parm) #Retrieve the data from the json file stoerd 
+        server_socket.send(json.dumps(data, indent=2).encode('ascii'))
+        
+        
 if saved:
     #Wait for client requests to connect (at least 3 connections)
     addres=('127.0.0.1',12345) 
@@ -162,20 +161,23 @@ if saved:
     counter=0 #Count the connections in the server
     while True:   
         try:
-            client_socket, addr = server.accept()
+            server_socket, addr = server.accept()
             counter+=1 
-            client_name = client_socket.recv(1024)
+            client_name = server_socket.recv(1024)
             name=client_name.decode('ascii')
-            if name=='quit': #in case the client quit before putting his name
-                client_socket.close()
-                continue
+            
             print(f"Accepted Connection No.{counter} with {name}")
+            
+            if name=='quit': #in case the client quit before he write his name
+                server_socket.close()
+                continue
             #Each client will have 
-            client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
+            client_handler= threading.Thread(target=handle_client, args=(server_socket,name,counter))
             client_handler.start()
-        except (KeyboardInterrupt):
-            print(f"{name} error... keyboard Interrupt")
-        
-
+        except (ConnectionAbortedError or ConnectionResetError or KeyboardInterrupt ):
+            print(f"{counter}. {name} >> connection aborted; disconnected...")
+            server_socket.close()
+            continue 
+       
 
         

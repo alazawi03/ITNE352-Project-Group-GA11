@@ -3,12 +3,12 @@
     "limit": 100,
     "offset": 0,
     "count": 100,
-    "total": 2381
+    "total": 2772
   },
   "data": [
     {
       "flight_date": "2024-01-01",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Hong Kong International",
         "timezone": "Asia/Hong_Kong",
@@ -16,12 +16,12 @@
         "icao": "VHHH",
         "terminal": "1",
         "gate": "3",
-        "delay": null,
+        "delay": 24,
         "scheduled": "2024-01-01T00:55:00+00:00",
         "estimated": "2024-01-01T00:55:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2024-01-01T01:18:00+00:00",
+        "estimated_runway": "2024-01-01T01:18:00+00:00",
+        "actual_runway": "2024-01-01T01:18:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -30,7 +30,7 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": null,
-        "baggage": null,
+        "baggage": "CL7",
         "delay": null,
         "scheduled": "2023-12-31T21:00:00+00:00",
         "estimated": "2023-12-31T21:00:00+00:00",
@@ -63,15 +63,15 @@
       "flight_date": "2024-01-01",
       "flight_status": "scheduled",
       "departure": {
-        "airport": "Hong Kong International",
-        "timezone": "Asia/Hong_Kong",
-        "iata": "HKG",
-        "icao": "VHHH",
-        "terminal": "1",
-        "gate": "3",
-        "delay": null,
-        "scheduled": "2024-01-01T00:55:00+00:00",
-        "estimated": "2024-01-01T00:55:00+00:00",
+        "airport": "Indira Gandhi International",
+        "timezone": "Asia/Kolkata",
+        "iata": "DEL",
+        "icao": "VIDP",
+        "terminal": "3",
+        "gate": "1",
+        "delay": 480,
+        "scheduled": "2024-01-01T04:00:00+00:00",
+        "estimated": "2024-01-01T04:00:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
@@ -81,9 +81,55 @@
         "timezone": "America/Los_Angeles",
         "iata": "SFO",
         "icao": "KSFO",
-        "terminal": "I",
+        "terminal": "INTL",
         "gate": null,
         "baggage": null,
+        "delay": null,
+        "scheduled": "2024-01-01T06:00:00+00:00",
+        "estimated": "2024-01-01T06:00:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Air India",
+        "iata": "AI",
+        "icao": "AIC"
+      },
+      "flight": {
+        "number": "173",
+        "iata": "AI173",
+        "icao": "AIC173",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-01-01",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Hong Kong International",
+        "timezone": "Asia/Hong_Kong",
+        "iata": "HKG",
+        "icao": "VHHH",
+        "terminal": "1",
+        "gate": "3",
+        "delay": 24,
+        "scheduled": "2024-01-01T00:55:00+00:00",
+        "estimated": "2024-01-01T00:55:00+00:00",
+        "actual": "2024-01-01T01:18:00+00:00",
+        "estimated_runway": "2024-01-01T01:18:00+00:00",
+        "actual_runway": "2024-01-01T01:18:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "I",
+        "gate": null,
+        "baggage": "CL7",
         "delay": null,
         "scheduled": "2023-12-31T21:00:00+00:00",
         "estimated": "2023-12-31T21:00:00+00:00",
@@ -107,7 +153,7 @@
     },
     {
       "flight_date": "2024-01-01",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Hong Kong International",
         "timezone": "Asia/Hong_Kong",
@@ -115,12 +161,12 @@
         "icao": "VHHH",
         "terminal": "1",
         "gate": "3",
-        "delay": null,
+        "delay": 24,
         "scheduled": "2024-01-01T00:55:00+00:00",
         "estimated": "2024-01-01T00:55:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2024-01-01T01:18:00+00:00",
+        "estimated_runway": "2024-01-01T01:18:00+00:00",
+        "actual_runway": "2024-01-01T01:18:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -129,7 +175,7 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": null,
-        "baggage": null,
+        "baggage": "CL7",
         "delay": null,
         "scheduled": "2023-12-31T21:00:00+00:00",
         "estimated": "2023-12-31T21:00:00+00:00",
@@ -160,7 +206,7 @@
     },
     {
       "flight_date": "2024-01-01",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Hong Kong International",
         "timezone": "Asia/Hong_Kong",
@@ -168,12 +214,12 @@
         "icao": "VHHH",
         "terminal": "1",
         "gate": "3",
-        "delay": null,
+        "delay": 24,
         "scheduled": "2024-01-01T00:55:00+00:00",
         "estimated": "2024-01-01T00:55:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2024-01-01T01:18:00+00:00",
+        "estimated_runway": "2024-01-01T01:18:00+00:00",
+        "actual_runway": "2024-01-01T01:18:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -182,7 +228,7 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": null,
-        "baggage": null,
+        "baggage": "CL7",
         "delay": null,
         "scheduled": "2023-12-31T21:00:00+00:00",
         "estimated": "2023-12-31T21:00:00+00:00",
@@ -212,18 +258,18 @@
       "live": null
     },
     {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_date": "2024-01-01",
+      "flight_status": "scheduled",
       "departure": {
-        "airport": "Fort Lauderdale\u2013Hollywood International",
-        "timezone": "America/New_York",
-        "iata": "FLL",
-        "icao": "KFLL",
-        "terminal": "3",
-        "gate": "E10",
-        "delay": 33,
-        "scheduled": "2023-12-31T07:50:00+00:00",
-        "estimated": "2023-12-31T07:50:00+00:00",
+        "airport": "Melbourne - Tullamarine Airport",
+        "timezone": "Australia/Melbourne",
+        "iata": "MEL",
+        "icao": "YMML",
+        "terminal": "2",
+        "gate": null,
+        "delay": null,
+        "scheduled": "2024-01-01T13:00:00+00:00",
+        "estimated": "2024-01-01T13:00:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
@@ -233,10 +279,194 @@
         "timezone": "America/Los_Angeles",
         "iata": "SFO",
         "icao": "KSFO",
+        "terminal": "INTL",
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2024-01-01T08:30:00+00:00",
+        "estimated": "2024-01-01T08:30:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "61",
+        "iata": "UA61",
+        "icao": "UAL61",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-01-01",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Brisbane International",
+        "timezone": "Australia/Brisbane",
+        "iata": "BNE",
+        "icao": "YBBN",
+        "terminal": "I",
+        "gate": null,
+        "delay": 13,
+        "scheduled": "2024-01-01T11:30:00+00:00",
+        "estimated": "2024-01-01T11:30:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "INTL",
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2024-01-01T06:40:00+00:00",
+        "estimated": "2024-01-01T06:40:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "97",
+        "iata": "UA97",
+        "icao": "UAL97",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-01-01",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Ninoy Aquino International",
+        "timezone": "Asia/Manila",
+        "iata": "MNL",
+        "icao": "RPLL",
+        "terminal": "3",
+        "gate": null,
+        "delay": null,
+        "scheduled": "2024-01-01T09:55:00+00:00",
+        "estimated": "2024-01-01T09:55:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "I",
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2024-01-01T06:20:00+00:00",
+        "estimated": "2024-01-01T06:20:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "190",
+        "iata": "UA190",
+        "icao": "UAL190",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-01-01",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Sydney Kingsford Smith Airport",
+        "timezone": "Australia/Sydney",
+        "iata": "SYD",
+        "icao": "YSSY",
+        "terminal": "1",
+        "gate": "53",
+        "delay": null,
+        "scheduled": "2024-01-01T12:10:00+00:00",
+        "estimated": "2024-01-01T12:10:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "INTL",
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2024-01-01T06:55:00+00:00",
+        "estimated": "2024-01-01T06:55:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "830",
+        "iata": "UA830",
+        "icao": "UAL830",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Fort Lauderdale\u2013Hollywood International",
+        "timezone": "America/New_York",
+        "iata": "FLL",
+        "icao": "KFLL",
+        "terminal": "3",
+        "gate": "E10",
+        "delay": 60,
+        "scheduled": "2023-12-31T07:50:00+00:00",
+        "estimated": "2023-12-31T07:50:00+00:00",
+        "actual": "2023-12-31T08:50:00+00:00",
+        "estimated_runway": "2023-12-31T08:50:00+00:00",
+        "actual_runway": "2023-12-31T08:50:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
         "terminal": "1",
         "gate": "B7",
-        "baggage": "3",
-        "delay": null,
+        "baggage": "CL-B",
+        "delay": 35,
         "scheduled": "2023-12-31T11:13:00+00:00",
         "estimated": "2023-12-31T11:13:00+00:00",
         "actual": null,
@@ -266,7 +496,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "scheduled",
       "departure": {
         "airport": "Fort Lauderdale\u2013Hollywood International",
         "timezone": "America/New_York",
@@ -274,12 +504,12 @@
         "icao": "KFLL",
         "terminal": "3",
         "gate": "E10",
-        "delay": 33,
+        "delay": 60,
         "scheduled": "2023-12-31T07:50:00+00:00",
         "estimated": "2023-12-31T07:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:50:00+00:00",
+        "estimated_runway": "2023-12-31T08:50:00+00:00",
+        "actual_runway": "2023-12-31T08:50:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -288,8 +518,8 @@
         "icao": "KSFO",
         "terminal": "1",
         "gate": "B7",
-        "baggage": "3",
-        "delay": null,
+        "baggage": "CL-B",
+        "delay": 35,
         "scheduled": "2023-12-31T11:13:00+00:00",
         "estimated": "2023-12-31T11:13:00+00:00",
         "actual": null,
@@ -319,7 +549,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "scheduled",
       "departure": {
         "airport": "Fort Lauderdale\u2013Hollywood International",
         "timezone": "America/New_York",
@@ -327,12 +557,12 @@
         "icao": "KFLL",
         "terminal": "3",
         "gate": "E10",
-        "delay": 33,
+        "delay": 60,
         "scheduled": "2023-12-31T07:50:00+00:00",
         "estimated": "2023-12-31T07:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:50:00+00:00",
+        "estimated_runway": "2023-12-31T08:50:00+00:00",
+        "actual_runway": "2023-12-31T08:50:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -341,8 +571,8 @@
         "icao": "KSFO",
         "terminal": "1",
         "gate": "B7",
-        "baggage": "3",
-        "delay": null,
+        "baggage": "CL-B",
+        "delay": 35,
         "scheduled": "2023-12-31T11:13:00+00:00",
         "estimated": "2023-12-31T11:13:00+00:00",
         "actual": null,
@@ -365,6 +595,59 @@
           "flight_number": "577",
           "flight_iata": "b6577",
           "flight_icao": "jbu577"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Sky Harbor International",
+        "timezone": "America/Phoenix",
+        "iata": "PHX",
+        "icao": "KPHX",
+        "terminal": "3",
+        "gate": "F2",
+        "delay": null,
+        "scheduled": "2023-12-31T16:22:00+00:00",
+        "estimated": "2023-12-31T16:22:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "INTL",
+        "gate": null,
+        "baggage": "CL12",
+        "delay": null,
+        "scheduled": "2023-12-31T17:42:00+00:00",
+        "estimated": "2023-12-31T17:42:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Volaris",
+        "iata": "Y4",
+        "icao": "VOI"
+      },
+      "flight": {
+        "number": "2732",
+        "iata": "Y42732",
+        "icao": "VOI2732",
+        "codeshared": {
+          "airline_name": "frontier airlines",
+          "airline_iata": "f9",
+          "airline_icao": "fft",
+          "flight_number": "2639",
+          "flight_iata": "f92639",
+          "flight_icao": "fft2639"
         }
       },
       "aircraft": null,
@@ -413,12 +696,26 @@
         "icao": "UAL59",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "N2846U",
+        "iata": "B77W",
+        "icao": "B77W",
+        "icao24": "A2E014"
+      },
+      "live": {
+        "updated": "2023-12-31T16:45:08+00:00",
+        "latitude": 68.0932,
+        "longitude": -42.8935,
+        "altitude": 9753.6,
+        "direction": 274,
+        "speed_horizontal": 855.624,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Narita International Airport",
         "timezone": "Asia/Tokyo",
@@ -440,13 +737,13 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": "G10",
-        "baggage": "CL5",
+        "baggage": "CL1",
         "delay": null,
         "scheduled": "2023-12-31T09:15:00+00:00",
         "estimated": "2023-12-31T09:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:02:00+00:00",
+        "estimated_runway": "2023-12-31T09:02:00+00:00",
+        "actual_runway": "2023-12-31T09:02:00+00:00"
       },
       "airline": {
         "name": "ANA",
@@ -465,20 +762,11 @@
         "icao": "B77W",
         "icao24": "869210"
       },
-      "live": {
-        "updated": "2023-12-31T11:38:32+00:00",
-        "latitude": 41.1199,
-        "longitude": 175.779,
-        "altitude": 10668,
-        "direction": 90,
-        "speed_horizontal": 1105.64,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
+      "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Narita International Airport",
         "timezone": "Asia/Tokyo",
@@ -499,14 +787,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": null,
-        "baggage": "CL5",
+        "gate": "G10",
+        "baggage": "CL1",
         "delay": null,
         "scheduled": "2023-12-31T09:15:00+00:00",
         "estimated": "2023-12-31T09:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:02:00+00:00",
+        "estimated_runway": "2023-12-31T09:02:00+00:00",
+        "actual_runway": "2023-12-31T09:02:00+00:00"
       },
       "airline": {
         "name": "Thai Airways International",
@@ -531,7 +819,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Narita International Airport",
         "timezone": "Asia/Tokyo",
@@ -552,14 +840,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": null,
-        "baggage": "CL5",
+        "gate": "G10",
+        "baggage": "CL1",
         "delay": null,
         "scheduled": "2023-12-31T09:15:00+00:00",
         "estimated": "2023-12-31T09:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:02:00+00:00",
+        "estimated_runway": "2023-12-31T09:02:00+00:00",
+        "actual_runway": "2023-12-31T09:02:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -584,7 +872,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Sky Harbor International",
         "timezone": "America/Phoenix",
@@ -592,12 +880,12 @@
         "icao": "KPHX",
         "terminal": "3",
         "gate": "E10",
-        "delay": 13,
+        "delay": 6,
         "scheduled": "2023-12-31T08:00:00+00:00",
         "estimated": "2023-12-31T08:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:05:00+00:00",
+        "estimated_runway": "2023-12-31T08:05:00+00:00",
+        "actual_runway": "2023-12-31T08:05:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -610,9 +898,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:09:00+00:00",
         "estimated": "2023-12-31T09:09:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:46:00+00:00",
+        "estimated_runway": "2023-12-31T08:46:00+00:00",
+        "actual_runway": "2023-12-31T08:46:00+00:00"
       },
       "airline": {
         "name": "Lufthansa",
@@ -644,13 +932,13 @@
         "iata": "DTW",
         "icao": "KDTW",
         "terminal": "EM",
-        "gate": "A8",
-        "delay": 10,
+        "gate": "A21",
+        "delay": 14,
         "scheduled": "2023-12-31T12:46:00+00:00",
         "estimated": "2023-12-31T12:46:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T13:00:00+00:00",
+        "estimated_runway": "2023-12-31T13:00:00+00:00",
+        "actual_runway": "2023-12-31T13:00:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -658,8 +946,8 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "2",
-        "gate": "C5",
-        "baggage": "1",
+        "gate": "C6",
+        "baggage": "2",
         "delay": null,
         "scheduled": "2023-12-31T15:03:00+00:00",
         "estimated": "2023-12-31T15:03:00+00:00",
@@ -683,7 +971,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Philadelphia International",
         "timezone": "America/New_York",
@@ -709,9 +997,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:30:00+00:00",
         "estimated": "2023-12-31T09:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:34:00+00:00",
+        "estimated_runway": "2023-12-31T08:34:00+00:00",
+        "actual_runway": "2023-12-31T08:34:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -730,20 +1018,11 @@
         "icao": "B738",
         "icao24": "AA7E51"
       },
-      "live": {
-        "updated": "2023-12-31T13:25:09+00:00",
-        "latitude": 42.5374,
-        "longitude": -95.1241,
-        "altitude": 10972.8,
-        "direction": 267,
-        "speed_horizontal": 790.804,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
+      "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -769,9 +1048,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:35:00+00:00",
         "estimated": "2023-12-31T10:35:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:14:00+00:00",
+        "estimated_runway": "2023-12-31T10:14:00+00:00",
+        "actual_runway": "2023-12-31T10:14:00+00:00"
       },
       "airline": {
         "name": "Singapore Airlines",
@@ -796,7 +1075,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -822,9 +1101,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:35:00+00:00",
         "estimated": "2023-12-31T10:35:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:14:00+00:00",
+        "estimated_runway": "2023-12-31T10:14:00+00:00",
+        "actual_runway": "2023-12-31T10:14:00+00:00"
       },
       "airline": {
         "name": "Qatar Airways",
@@ -849,7 +1128,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -875,9 +1154,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:57:00+00:00",
         "estimated": "2023-12-31T10:57:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:47:00+00:00",
+        "estimated_runway": "2023-12-31T09:47:00+00:00",
+        "actual_runway": "2023-12-31T09:47:00+00:00"
       },
       "airline": {
         "name": "Virgin Atlantic",
@@ -902,7 +1181,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -928,9 +1207,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:57:00+00:00",
         "estimated": "2023-12-31T10:57:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:47:00+00:00",
+        "estimated_runway": "2023-12-31T09:47:00+00:00",
+        "actual_runway": "2023-12-31T09:47:00+00:00"
       },
       "airline": {
         "name": "KLM",
@@ -955,7 +1234,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -981,9 +1260,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:57:00+00:00",
         "estimated": "2023-12-31T10:57:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:47:00+00:00",
+        "estimated_runway": "2023-12-31T09:47:00+00:00",
+        "actual_runway": "2023-12-31T09:47:00+00:00"
       },
       "airline": {
         "name": "Aeromexico",
@@ -1008,7 +1287,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -1030,13 +1309,13 @@
         "icao": "KSFO",
         "terminal": "1",
         "gate": "B24",
-        "baggage": "1",
+        "baggage": "CL-B",
         "delay": null,
         "scheduled": "2023-12-31T09:43:00+00:00",
         "estimated": "2023-12-31T09:43:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:54:00+00:00",
+        "estimated_runway": "2023-12-31T08:54:00+00:00",
+        "actual_runway": "2023-12-31T08:54:00+00:00"
       },
       "airline": {
         "name": "Qantas",
@@ -1061,7 +1340,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "John F Kennedy International",
         "timezone": "America/New_York",
@@ -1083,13 +1362,13 @@
         "icao": "KSFO",
         "terminal": "1",
         "gate": "B24",
-        "baggage": "1",
+        "baggage": "CL-B",
         "delay": null,
         "scheduled": "2023-12-31T09:43:00+00:00",
         "estimated": "2023-12-31T09:43:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:54:00+00:00",
+        "estimated_runway": "2023-12-31T08:54:00+00:00",
+        "actual_runway": "2023-12-31T08:54:00+00:00"
       },
       "airline": {
         "name": "Jet Linx Aviation",
@@ -1116,15 +1395,15 @@
       "flight_date": "2023-12-31",
       "flight_status": "scheduled",
       "departure": {
-        "airport": "Chicago O'hare International",
-        "timezone": "America/Chicago",
-        "iata": "ORD",
-        "icao": "KORD",
+        "airport": "Kona International Airport",
+        "timezone": "Pacific/Honolulu",
+        "iata": "KOA",
+        "icao": "PHKO",
         "terminal": "1",
-        "gate": "B6",
-        "delay": 53,
-        "scheduled": "2023-12-31T06:15:00+00:00",
-        "estimated": "2023-12-31T06:15:00+00:00",
+        "gate": "2",
+        "delay": null,
+        "scheduled": "2023-12-31T14:10:00+00:00",
+        "estimated": "2023-12-31T14:10:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
@@ -1135,14 +1414,113 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "E12",
-        "baggage": "5",
+        "gate": "F16",
+        "baggage": "3",
         "delay": null,
-        "scheduled": "2023-12-31T09:05:00+00:00",
-        "estimated": "2023-12-31T09:05:00+00:00",
+        "scheduled": "2023-12-31T21:20:00+00:00",
+        "estimated": "2023-12-31T21:20:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
+      },
+      "airline": {
+        "name": "Copa Airlines",
+        "iata": "CM",
+        "icao": "CMP"
+      },
+      "flight": {
+        "number": "2387",
+        "iata": "CM2387",
+        "icao": "CMP2387",
+        "codeshared": {
+          "airline_name": "united airlines",
+          "airline_iata": "ua",
+          "airline_icao": "ual",
+          "flight_number": "1711",
+          "flight_iata": "ua1711",
+          "flight_icao": "ual1711"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kona International Airport",
+        "timezone": "Pacific/Honolulu",
+        "iata": "KOA",
+        "icao": "PHKO",
+        "terminal": "1",
+        "gate": "2",
+        "delay": null,
+        "scheduled": "2023-12-31T14:10:00+00:00",
+        "estimated": "2023-12-31T14:10:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F16",
+        "baggage": "3",
+        "delay": null,
+        "scheduled": "2023-12-31T21:20:00+00:00",
+        "estimated": "2023-12-31T21:20:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "1711",
+        "iata": "UA1711",
+        "icao": "UAL1711",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "timezone": "America/Chicago",
+        "iata": "ORD",
+        "icao": "KORD",
+        "terminal": "1",
+        "gate": "B6",
+        "delay": 73,
+        "scheduled": "2023-12-31T06:15:00+00:00",
+        "estimated": "2023-12-31T06:15:00+00:00",
+        "actual": "2023-12-31T07:27:00+00:00",
+        "estimated_runway": "2023-12-31T07:27:00+00:00",
+        "actual_runway": "2023-12-31T07:27:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F3",
+        "baggage": "5",
+        "delay": 13,
+        "scheduled": "2023-12-31T09:05:00+00:00",
+        "estimated": "2023-12-31T09:05:00+00:00",
+        "actual": "2023-12-31T09:18:00+00:00",
+        "estimated_runway": "2023-12-31T09:18:00+00:00",
+        "actual_runway": "2023-12-31T09:18:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -1160,7 +1538,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Chicago O'hare International",
         "timezone": "America/Chicago",
@@ -1168,12 +1546,12 @@
         "icao": "KORD",
         "terminal": "1",
         "gate": "B6",
-        "delay": 53,
+        "delay": 73,
         "scheduled": "2023-12-31T06:15:00+00:00",
         "estimated": "2023-12-31T06:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:27:00+00:00",
+        "estimated_runway": "2023-12-31T07:27:00+00:00",
+        "actual_runway": "2023-12-31T07:27:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1181,14 +1559,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "E12",
+        "gate": "F3",
         "baggage": "5",
-        "delay": null,
+        "delay": 13,
         "scheduled": "2023-12-31T09:05:00+00:00",
         "estimated": "2023-12-31T09:05:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:18:00+00:00",
+        "estimated_runway": "2023-12-31T09:18:00+00:00",
+        "actual_runway": "2023-12-31T09:18:00+00:00"
       },
       "airline": {
         "name": "Virgin Australia",
@@ -1213,7 +1591,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Chicago O'hare International",
         "timezone": "America/Chicago",
@@ -1221,12 +1599,12 @@
         "icao": "KORD",
         "terminal": "1",
         "gate": "B6",
-        "delay": 53,
+        "delay": 73,
         "scheduled": "2023-12-31T06:15:00+00:00",
         "estimated": "2023-12-31T06:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:27:00+00:00",
+        "estimated_runway": "2023-12-31T07:27:00+00:00",
+        "actual_runway": "2023-12-31T07:27:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1234,14 +1612,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "E12",
+        "gate": "F3",
         "baggage": "5",
-        "delay": null,
+        "delay": 13,
         "scheduled": "2023-12-31T09:05:00+00:00",
         "estimated": "2023-12-31T09:05:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:18:00+00:00",
+        "estimated_runway": "2023-12-31T09:18:00+00:00",
+        "actual_runway": "2023-12-31T09:18:00+00:00"
       },
       "airline": {
         "name": "Air New Zealand",
@@ -1266,7 +1644,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Chicago O'hare International",
         "timezone": "America/Chicago",
@@ -1274,12 +1652,12 @@
         "icao": "KORD",
         "terminal": "1",
         "gate": "B6",
-        "delay": 53,
+        "delay": 73,
         "scheduled": "2023-12-31T06:15:00+00:00",
         "estimated": "2023-12-31T06:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:27:00+00:00",
+        "estimated_runway": "2023-12-31T07:27:00+00:00",
+        "actual_runway": "2023-12-31T07:27:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1287,14 +1665,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "E12",
+        "gate": "F3",
         "baggage": "5",
-        "delay": null,
+        "delay": 13,
         "scheduled": "2023-12-31T09:05:00+00:00",
         "estimated": "2023-12-31T09:05:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:18:00+00:00",
+        "estimated_runway": "2023-12-31T09:18:00+00:00",
+        "actual_runway": "2023-12-31T09:18:00+00:00"
       },
       "airline": {
         "name": "Air Canada",
@@ -1319,20 +1697,20 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Sky Harbor International",
         "timezone": "America/Phoenix",
         "iata": "PHX",
         "icao": "KPHX",
         "terminal": "4",
-        "gate": null,
-        "delay": 10,
+        "gate": "D7",
+        "delay": 11,
         "scheduled": "2023-12-31T09:10:00+00:00",
         "estimated": "2023-12-31T09:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:21:00+00:00",
+        "estimated_runway": "2023-12-31T09:21:00+00:00",
+        "actual_runway": "2023-12-31T09:21:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1345,9 +1723,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:20:00+00:00",
         "estimated": "2023-12-31T10:20:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:58:00+00:00",
+        "estimated_runway": "2023-12-31T09:58:00+00:00",
+        "actual_runway": "2023-12-31T09:58:00+00:00"
       },
       "airline": {
         "name": "Southwest Airlines",
@@ -1367,6 +1745,112 @@
       "flight_date": "2023-12-31",
       "flight_status": "active",
       "departure": {
+        "airport": "Dallas/Fort Worth International",
+        "timezone": "America/Chicago",
+        "iata": "DFW",
+        "icao": "KDFW",
+        "terminal": "C",
+        "gate": "C19",
+        "delay": 15,
+        "scheduled": "2023-12-31T10:45:00+00:00",
+        "estimated": "2023-12-31T10:45:00+00:00",
+        "actual": "2023-12-31T10:59:00+00:00",
+        "estimated_runway": "2023-12-31T10:59:00+00:00",
+        "actual_runway": "2023-12-31T10:59:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "1",
+        "gate": "B25",
+        "baggage": "CL-B",
+        "delay": null,
+        "scheduled": "2023-12-31T12:51:00+00:00",
+        "estimated": "2023-12-31T12:51:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Gol",
+        "iata": "G3",
+        "icao": "GLO"
+      },
+      "flight": {
+        "number": "6173",
+        "iata": "G36173",
+        "icao": "GLO6173",
+        "codeshared": {
+          "airline_name": "american airlines",
+          "airline_iata": "aa",
+          "airline_icao": "aal",
+          "flight_number": "1588",
+          "flight_iata": "aa1588",
+          "flight_icao": "aal1588"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Dallas/Fort Worth International",
+        "timezone": "America/Chicago",
+        "iata": "DFW",
+        "icao": "KDFW",
+        "terminal": "C",
+        "gate": "C19",
+        "delay": 15,
+        "scheduled": "2023-12-31T10:45:00+00:00",
+        "estimated": "2023-12-31T10:45:00+00:00",
+        "actual": "2023-12-31T10:59:00+00:00",
+        "estimated_runway": "2023-12-31T10:59:00+00:00",
+        "actual_runway": "2023-12-31T10:59:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "1",
+        "gate": "B25",
+        "baggage": "CL-B",
+        "delay": null,
+        "scheduled": "2023-12-31T12:51:00+00:00",
+        "estimated": "2023-12-31T12:51:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "British Airways",
+        "iata": "BA",
+        "icao": "BAW"
+      },
+      "flight": {
+        "number": "6541",
+        "iata": "BA6541",
+        "icao": "BAW6541",
+        "codeshared": {
+          "airline_name": "american airlines",
+          "airline_iata": "aa",
+          "airline_icao": "aal",
+          "flight_number": "1588",
+          "flight_iata": "aa1588",
+          "flight_icao": "aal1588"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "active",
+      "departure": {
         "airport": "Seoul (Incheon)",
         "timezone": "Asia/Seoul",
         "iata": "ICN",
@@ -1376,9 +1860,9 @@
         "delay": 36,
         "scheduled": "2023-12-31T20:50:00+00:00",
         "estimated": "2023-12-31T20:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T21:44:00+00:00",
+        "estimated_runway": "2023-12-31T21:44:00+00:00",
+        "actual_runway": "2023-12-31T21:44:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1388,7 +1872,7 @@
         "terminal": "I",
         "gate": null,
         "baggage": "CL11",
-        "delay": null,
+        "delay": 15,
         "scheduled": "2023-12-31T14:00:00+00:00",
         "estimated": "2023-12-31T14:00:00+00:00",
         "actual": null,
@@ -1411,7 +1895,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Miami International Airport",
         "timezone": "America/New_York",
@@ -1437,9 +1921,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:41:00+00:00",
         "estimated": "2023-12-31T10:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:11:00+00:00",
+        "estimated_runway": "2023-12-31T10:11:00+00:00",
+        "actual_runway": "2023-12-31T10:11:00+00:00"
       },
       "airline": {
         "name": "American Airlines",
@@ -1452,12 +1936,17 @@
         "icao": "AAL2045",
         "codeshared": null
       },
-      "aircraft": null,
+      "aircraft": {
+        "registration": "N426AN",
+        "iata": "A21N",
+        "icao": "A21N",
+        "icao24": "A511F6"
+      },
       "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Miami International Airport",
         "timezone": "America/New_York",
@@ -1483,9 +1972,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:41:00+00:00",
         "estimated": "2023-12-31T10:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:11:00+00:00",
+        "estimated_runway": "2023-12-31T10:11:00+00:00",
+        "actual_runway": "2023-12-31T10:11:00+00:00"
       },
       "airline": {
         "name": "Qantas",
@@ -1510,7 +1999,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Miami International Airport",
         "timezone": "America/New_York",
@@ -1536,9 +2025,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:41:00+00:00",
         "estimated": "2023-12-31T10:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:11:00+00:00",
+        "estimated_runway": "2023-12-31T10:11:00+00:00",
+        "actual_runway": "2023-12-31T10:11:00+00:00"
       },
       "airline": {
         "name": "Jet Linx Aviation",
@@ -1563,7 +2052,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Miami International Airport",
         "timezone": "America/New_York",
@@ -1589,9 +2078,9 @@
         "delay": null,
         "scheduled": "2023-12-31T10:41:00+00:00",
         "estimated": "2023-12-31T10:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:11:00+00:00",
+        "estimated_runway": "2023-12-31T10:11:00+00:00",
+        "actual_runway": "2023-12-31T10:11:00+00:00"
       },
       "airline": {
         "name": "Gol",
@@ -1616,7 +2105,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Newark Liberty International",
         "timezone": "America/New_York",
@@ -1624,12 +2113,12 @@
         "icao": "KEWR",
         "terminal": "C",
         "gate": "95",
-        "delay": null,
+        "delay": 5,
         "scheduled": "2023-12-31T10:00:00+00:00",
         "estimated": "2023-12-31T10:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:05:00+00:00",
+        "estimated_runway": "2023-12-31T10:05:00+00:00",
+        "actual_runway": "2023-12-31T10:05:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1710,8 +2199,22 @@
         "icao": "EVA18",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "B-16731",
+        "iata": "B77W",
+        "icao": "B77W",
+        "icao24": "899036"
+      },
+      "live": {
+        "updated": "2023-12-31T17:42:56+00:00",
+        "latitude": 41.0938,
+        "longitude": -177.306,
+        "altitude": 10668,
+        "direction": 88,
+        "speed_horizontal": 1085.27,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
@@ -1874,7 +2377,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Hong Kong International",
         "timezone": "Asia/Hong_Kong",
@@ -1896,13 +2399,13 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": "G9",
-        "baggage": "CL1",
+        "baggage": "CL6",
         "delay": 125,
         "scheduled": "2023-12-31T07:25:00+00:00",
         "estimated": "2023-12-31T07:25:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T06:41:00+00:00",
+        "estimated_runway": "2023-12-31T06:41:00+00:00",
+        "actual_runway": "2023-12-31T06:41:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -1921,20 +2424,11 @@
         "icao": "B77W",
         "icao24": "A1F2B1"
       },
-      "live": {
-        "updated": "2023-12-31T10:47:04+00:00",
-        "latitude": 49.7322,
-        "longitude": -163.393,
-        "altitude": 10363.2,
-        "direction": 81,
-        "speed_horizontal": 935.26,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
+      "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Denver International",
         "timezone": "America/Denver",
@@ -1942,12 +2436,12 @@
         "icao": "KDEN",
         "terminal": null,
         "gate": "B28",
-        "delay": null,
+        "delay": 15,
         "scheduled": "2023-12-31T09:49:00+00:00",
         "estimated": "2023-12-31T09:49:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:03:00+00:00",
+        "estimated_runway": "2023-12-31T10:03:00+00:00",
+        "actual_runway": "2023-12-31T10:03:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -1955,7 +2449,7 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F12",
+        "gate": "E11",
         "baggage": "1",
         "delay": null,
         "scheduled": "2023-12-31T11:48:00+00:00",
@@ -1975,12 +2469,26 @@
         "icao": "UAL368",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "N37547",
+        "iata": "B39M",
+        "icao": "B39M",
+        "icao24": "A44962"
+      },
+      "live": {
+        "updated": "2023-12-31T17:31:54+00:00",
+        "latitude": 39.5138,
+        "longitude": -108.861,
+        "altitude": 10363.2,
+        "direction": 260,
+        "speed_horizontal": 811.176,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Taiwan Taoyuan International (Chiang Kai Shek International)",
         "timezone": "Asia/Taipei",
@@ -2003,12 +2511,12 @@
         "terminal": "I",
         "gate": "G13",
         "baggage": "CL5",
-        "delay": 3,
+        "delay": 9,
         "scheduled": "2023-12-31T06:40:00+00:00",
         "estimated": "2023-12-31T06:40:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T06:48:00+00:00",
+        "estimated_runway": "2023-12-31T06:48:00+00:00",
+        "actual_runway": "2023-12-31T06:48:00+00:00"
       },
       "airline": {
         "name": "EVA Air",
@@ -2027,20 +2535,11 @@
         "icao": "B77W",
         "icao24": "8990DE"
       },
-      "live": {
-        "updated": "2023-12-31T08:29:00+00:00",
-        "latitude": 43.8065,
-        "longitude": 163.374,
-        "altitude": 10058.4,
-        "direction": 73,
-        "speed_horizontal": 1101.94,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
+      "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Taiwan Taoyuan International (Chiang Kai Shek International)",
         "timezone": "Asia/Taipei",
@@ -2063,12 +2562,12 @@
         "terminal": "I",
         "gate": "G13",
         "baggage": "CL5",
-        "delay": 3,
+        "delay": 9,
         "scheduled": "2023-12-31T06:40:00+00:00",
         "estimated": "2023-12-31T06:40:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T06:48:00+00:00",
+        "estimated_runway": "2023-12-31T06:48:00+00:00",
+        "actual_runway": "2023-12-31T06:48:00+00:00"
       },
       "airline": {
         "name": "Thai Airways International",
@@ -2093,7 +2592,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Taiwan Taoyuan International (Chiang Kai Shek International)",
         "timezone": "Asia/Taipei",
@@ -2119,9 +2618,9 @@
         "delay": null,
         "scheduled": "2023-12-31T06:25:00+00:00",
         "estimated": "2023-12-31T06:25:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T05:58:00+00:00",
+        "estimated_runway": "2023-12-31T05:58:00+00:00",
+        "actual_runway": "2023-12-31T05:58:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -2139,7 +2638,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Singapore Changi",
         "timezone": "Asia/Singapore",
@@ -2161,13 +2660,13 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": "G6",
-        "baggage": "CL6",
+        "baggage": "CL5",
         "delay": null,
         "scheduled": "2023-12-31T09:05:00+00:00",
         "estimated": "2023-12-31T09:05:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:30:00+00:00",
+        "estimated_runway": "2023-12-31T08:30:00+00:00",
+        "actual_runway": "2023-12-31T08:30:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -2185,7 +2684,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Sacramento International",
         "timezone": "America/Los_Angeles",
@@ -2193,12 +2692,12 @@
         "icao": "KSMF",
         "terminal": "A",
         "gate": "15",
-        "delay": null,
+        "delay": 15,
         "scheduled": "2023-12-31T10:10:00+00:00",
         "estimated": "2023-12-31T10:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:25:00+00:00",
+        "estimated_runway": "2023-12-31T10:25:00+00:00",
+        "actual_runway": "2023-12-31T10:25:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -2211,9 +2710,9 @@
         "delay": null,
         "scheduled": "2023-12-31T11:18:00+00:00",
         "estimated": "2023-12-31T11:18:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:56:00+00:00",
+        "estimated_runway": "2023-12-31T10:56:00+00:00",
+        "actual_runway": "2023-12-31T10:56:00+00:00"
       },
       "airline": {
         "name": "SA AVIANCA",
@@ -2238,7 +2737,205 @@
     },
     {
       "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Bob Hope",
+        "timezone": "America/Los_Angeles",
+        "iata": "BUR",
+        "icao": "KBUR",
+        "terminal": "B",
+        "gate": "4",
+        "delay": null,
+        "scheduled": "2023-12-31T12:35:00+00:00",
+        "estimated": "2023-12-31T12:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "D4",
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2023-12-31T14:11:00+00:00",
+        "estimated": "2023-12-31T14:11:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "American Airlines",
+        "iata": "AA",
+        "icao": "AAL"
+      },
+      "flight": {
+        "number": "9296",
+        "iata": "AA9296",
+        "icao": "AAL9296",
+        "codeshared": {
+          "airline_name": "alaska airlines",
+          "airline_iata": "as",
+          "airline_icao": "asa",
+          "flight_number": "3367",
+          "flight_iata": "as3367",
+          "flight_icao": "asa3367"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Gallatin Field",
+        "timezone": "America/Denver",
+        "iata": "BZN",
+        "icao": "KBZN",
+        "terminal": null,
+        "gate": "B3",
+        "delay": null,
+        "scheduled": "2023-12-31T15:46:00+00:00",
+        "estimated": "2023-12-31T15:46:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "E13",
+        "baggage": "3",
+        "delay": null,
+        "scheduled": "2023-12-31T17:19:00+00:00",
+        "estimated": "2023-12-31T17:19:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "236",
+        "iata": "UA236",
+        "icao": "UAL236",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
       "flight_status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "timezone": "America/Chicago",
+        "iata": "ORD",
+        "icao": "KORD",
+        "terminal": "1",
+        "gate": "C26",
+        "delay": null,
+        "scheduled": "2023-12-31T12:45:00+00:00",
+        "estimated": "2023-12-31T12:45:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F3",
+        "baggage": "5",
+        "delay": null,
+        "scheduled": "2023-12-31T15:38:00+00:00",
+        "estimated": "2023-12-31T15:38:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Air Canada",
+        "iata": "AC",
+        "icao": "ACA"
+      },
+      "flight": {
+        "number": "5269",
+        "iata": "AC5269",
+        "icao": "ACA5269",
+        "codeshared": {
+          "airline_name": "united airlines",
+          "airline_iata": "ua",
+          "airline_icao": "ual",
+          "flight_number": "230",
+          "flight_iata": "ua230",
+          "flight_icao": "ual230"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "John F Kennedy International",
+        "timezone": "America/New_York",
+        "iata": "JFK",
+        "icao": "KJFK",
+        "terminal": "4",
+        "gate": "B32",
+        "delay": null,
+        "scheduled": "2023-12-31T19:05:00+00:00",
+        "estimated": "2023-12-31T19:05:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "C8",
+        "baggage": "1",
+        "delay": null,
+        "scheduled": "2023-12-31T23:06:00+00:00",
+        "estimated": "2023-12-31T23:06:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Delta Air Lines",
+        "iata": "DL",
+        "icao": "DAL"
+      },
+      "flight": {
+        "number": "979",
+        "iata": "DL979",
+        "icao": "DAL979",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "landed",
       "departure": {
         "airport": "Newark Liberty International",
         "timezone": "America/New_York",
@@ -2259,14 +2956,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F13",
+        "gate": "F21",
         "baggage": "5",
         "delay": null,
         "scheduled": "2023-12-31T09:50:00+00:00",
         "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:56:00+00:00",
+        "estimated_runway": "2023-12-31T08:56:00+00:00",
+        "actual_runway": "2023-12-31T08:56:00+00:00"
       },
       "airline": {
         "name": "TAP Air Portugal",
@@ -2339,19 +3036,19 @@
         "icao24": "40688B"
       },
       "live": {
-        "updated": "2023-12-31T12:38:33+00:00",
-        "latitude": 58.9452,
-        "longitude": -7.2845,
-        "altitude": 9753.6,
-        "direction": 333,
-        "speed_horizontal": 907.48,
+        "updated": "2023-12-31T14:57:18+00:00",
+        "latitude": 67.1119,
+        "longitude": -45.0271,
+        "altitude": 10972.8,
+        "direction": 270,
+        "speed_horizontal": 870.44,
         "speed_vertical": 0,
         "is_ground": false
       }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Sacramento International",
         "timezone": "America/Los_Angeles",
@@ -2359,12 +3056,12 @@
         "icao": "KSMF",
         "terminal": "A",
         "gate": "14",
-        "delay": null,
+        "delay": 13,
         "scheduled": "2023-12-31T06:34:00+00:00",
         "estimated": "2023-12-31T06:34:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T06:46:00+00:00",
+        "estimated_runway": "2023-12-31T06:46:00+00:00",
+        "actual_runway": "2023-12-31T06:46:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -2377,9 +3074,9 @@
         "delay": null,
         "scheduled": "2023-12-31T07:41:00+00:00",
         "estimated": "2023-12-31T07:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:20:00+00:00",
+        "estimated_runway": "2023-12-31T07:20:00+00:00",
+        "actual_runway": "2023-12-31T07:20:00+00:00"
       },
       "airline": {
         "name": "Air Canada",
@@ -2411,13 +3108,13 @@
         "iata": "EWR",
         "icao": "KEWR",
         "terminal": "C",
-        "gate": "80",
-        "delay": 20,
-        "scheduled": "2023-12-31T06:10:00+00:00",
-        "estimated": "2023-12-31T06:10:00+00:00",
-        "actual": "2023-12-31T06:29:00+00:00",
-        "estimated_runway": "2023-12-31T06:29:00+00:00",
-        "actual_runway": "2023-12-31T06:29:00+00:00"
+        "gate": "123",
+        "delay": 21,
+        "scheduled": "2023-12-31T16:15:00+00:00",
+        "estimated": "2023-12-31T16:15:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -2425,32 +3122,39 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F11",
+        "gate": "F22",
         "baggage": "5",
         "delay": null,
-        "scheduled": "2023-12-31T09:50:00+00:00",
-        "estimated": "2023-12-31T09:50:00+00:00",
+        "scheduled": "2023-12-31T19:35:00+00:00",
+        "estimated": "2023-12-31T19:35:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
       },
       "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
+        "name": "Austrian",
+        "iata": "OS",
+        "icao": "AUA"
       },
       "flight": {
-        "number": "2032",
-        "iata": "UA2032",
-        "icao": "UAL2032",
-        "codeshared": null
+        "number": "7989",
+        "iata": "OS7989",
+        "icao": "AUA7989",
+        "codeshared": {
+          "airline_name": "united airlines",
+          "airline_iata": "ua",
+          "airline_icao": "ual",
+          "flight_number": "548",
+          "flight_iata": "ua548",
+          "flight_icao": "ual548"
+        }
       },
       "aircraft": null,
       "live": null
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Newark Liberty International",
         "timezone": "America/New_York",
@@ -2471,14 +3175,60 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F13",
+        "gate": "F21",
         "baggage": "5",
         "delay": null,
         "scheduled": "2023-12-31T09:50:00+00:00",
         "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:56:00+00:00",
+        "estimated_runway": "2023-12-31T08:56:00+00:00",
+        "actual_runway": "2023-12-31T08:56:00+00:00"
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "2032",
+        "iata": "UA2032",
+        "icao": "UAL2032",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Newark Liberty International",
+        "timezone": "America/New_York",
+        "iata": "EWR",
+        "icao": "KEWR",
+        "terminal": "C",
+        "gate": "80",
+        "delay": 20,
+        "scheduled": "2023-12-31T06:10:00+00:00",
+        "estimated": "2023-12-31T06:10:00+00:00",
+        "actual": "2023-12-31T06:29:00+00:00",
+        "estimated_runway": "2023-12-31T06:29:00+00:00",
+        "actual_runway": "2023-12-31T06:29:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F21",
+        "baggage": "5",
+        "delay": null,
+        "scheduled": "2023-12-31T09:50:00+00:00",
+        "estimated": "2023-12-31T09:50:00+00:00",
+        "actual": "2023-12-31T08:56:00+00:00",
+        "estimated_runway": "2023-12-31T08:56:00+00:00",
+        "actual_runway": "2023-12-31T08:56:00+00:00"
       },
       "airline": {
         "name": "Virgin Australia",
@@ -2526,7 +3276,7 @@
         "terminal": "I",
         "gate": "G8",
         "baggage": "CL4",
-        "delay": 72,
+        "delay": 74,
         "scheduled": "2023-12-31T09:00:00+00:00",
         "estimated": "2023-12-31T09:00:00+00:00",
         "actual": null,
@@ -2551,19 +3301,19 @@
         "icao24": "AAC4ED"
       },
       "live": {
-        "updated": "2023-12-31T10:59:04+00:00",
-        "latitude": 43.9081,
-        "longitude": 152.963,
-        "altitude": 10058.4,
-        "direction": 46,
-        "speed_horizontal": 1127.87,
+        "updated": "2023-12-31T18:02:18+00:00",
+        "latitude": 37.3838,
+        "longitude": -123.412,
+        "altitude": 5029.2,
+        "direction": 105,
+        "speed_horizontal": 744.504,
         "speed_vertical": 0,
         "is_ground": false
       }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Auckland International",
         "timezone": "Pacific/Auckland",
@@ -2584,14 +3334,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": null,
-        "baggage": "CL4",
+        "gate": "G10",
+        "baggage": "CL5",
         "delay": 5,
         "scheduled": "2023-12-31T11:05:00+00:00",
         "estimated": "2023-12-31T11:05:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T11:05:00+00:00",
+        "estimated_runway": "2023-12-31T11:05:00+00:00",
+        "actual_runway": "2023-12-31T11:05:00+00:00"
       },
       "airline": {
         "name": "Virgin Atlantic",
@@ -2616,7 +3366,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Newark Liberty International",
         "timezone": "America/New_York",
@@ -2637,14 +3387,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F13",
+        "gate": "F21",
         "baggage": "5",
         "delay": null,
         "scheduled": "2023-12-31T09:50:00+00:00",
         "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:56:00+00:00",
+        "estimated_runway": "2023-12-31T08:56:00+00:00",
+        "actual_runway": "2023-12-31T08:56:00+00:00"
       },
       "airline": {
         "name": "Air New Zealand",
@@ -2669,7 +3419,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Logan International",
         "timezone": "America/New_York",
@@ -2695,9 +3445,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:02:00+00:00",
         "estimated": "2023-12-31T09:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:52:00+00:00",
+        "estimated_runway": "2023-12-31T07:52:00+00:00",
+        "actual_runway": "2023-12-31T07:52:00+00:00"
       },
       "airline": {
         "name": "Hawaiian Airlines",
@@ -2722,7 +3472,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Eugene",
         "timezone": "America/Los_Angeles",
@@ -2730,12 +3480,12 @@
         "icao": "KEUG",
         "terminal": null,
         "gate": "A3",
-        "delay": null,
+        "delay": 10,
         "scheduled": "2023-12-31T08:00:00+00:00",
         "estimated": "2023-12-31T08:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:09:00+00:00",
+        "estimated_runway": "2023-12-31T08:09:00+00:00",
+        "actual_runway": "2023-12-31T08:09:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -2743,14 +3493,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F4",
+        "gate": "E4",
         "baggage": "4",
         "delay": null,
         "scheduled": "2023-12-31T09:42:00+00:00",
         "estimated": "2023-12-31T09:42:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:34:00+00:00",
+        "estimated_runway": "2023-12-31T09:34:00+00:00",
+        "actual_runway": "2023-12-31T09:34:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -2768,7 +3518,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Logan International",
         "timezone": "America/New_York",
@@ -2794,9 +3544,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:02:00+00:00",
         "estimated": "2023-12-31T09:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:52:00+00:00",
+        "estimated_runway": "2023-12-31T07:52:00+00:00",
+        "actual_runway": "2023-12-31T07:52:00+00:00"
       },
       "airline": {
         "name": "Icelandair",
@@ -2867,7 +3617,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Logan International",
         "timezone": "America/New_York",
@@ -2893,9 +3643,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:02:00+00:00",
         "estimated": "2023-12-31T09:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:52:00+00:00",
+        "estimated_runway": "2023-12-31T07:52:00+00:00",
+        "actual_runway": "2023-12-31T07:52:00+00:00"
       },
       "airline": {
         "name": "TAP Air Portugal",
@@ -2920,7 +3670,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Logan International",
         "timezone": "America/New_York",
@@ -2946,9 +3696,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:02:00+00:00",
         "estimated": "2023-12-31T09:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:52:00+00:00",
+        "estimated_runway": "2023-12-31T07:52:00+00:00",
+        "actual_runway": "2023-12-31T07:52:00+00:00"
       },
       "airline": {
         "name": "Singapore Airlines",
@@ -2995,8 +3745,8 @@
         "icao": "KSFO",
         "terminal": "I",
         "gate": "G1",
-        "baggage": "CL6",
-        "delay": null,
+        "baggage": "CL2",
+        "delay": 3,
         "scheduled": "2023-12-31T14:55:00+00:00",
         "estimated": "2023-12-31T14:55:00+00:00",
         "actual": null,
@@ -3014,12 +3764,26 @@
         "icao": "UAL195",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "N228UA",
+        "iata": "B772",
+        "icao": "B772",
+        "icao24": "A2007C"
+      },
+      "live": {
+        "updated": "2023-12-31T15:24:43+00:00",
+        "latitude": 68.3425,
+        "longitude": -32.7343,
+        "altitude": 10972.8,
+        "direction": 287,
+        "speed_horizontal": 877.848,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "active",
       "departure": {
         "airport": "Fresno Air Terminal Airport",
         "timezone": "America/Los_Angeles",
@@ -3027,7 +3791,7 @@
         "icao": "KFAT",
         "terminal": null,
         "gate": "7",
-        "delay": null,
+        "delay": 16,
         "scheduled": "2023-12-31T11:00:00+00:00",
         "estimated": "2023-12-31T11:00:00+00:00",
         "actual": null,
@@ -3072,14 +3836,14 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Charles De Gaulle",
         "timezone": "Europe/Paris",
         "iata": "CDG",
         "icao": "LFPG",
         "terminal": "1",
-        "gate": "14",
+        "gate": "12",
         "delay": 18,
         "scheduled": "2023-12-31T09:00:00+00:00",
         "estimated": "2023-12-31T09:00:00+00:00",
@@ -3093,14 +3857,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": "G8",
-        "baggage": "CL2",
+        "gate": "G7",
+        "baggage": "CL1",
         "delay": null,
         "scheduled": "2023-12-31T11:35:00+00:00",
         "estimated": "2023-12-31T11:35:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T11:00:00+00:00",
+        "estimated_runway": "2023-12-31T11:00:00+00:00",
+        "actual_runway": "2023-12-31T11:00:00+00:00"
       },
       "airline": {
         "name": "United Airlines",
@@ -3119,16 +3883,7 @@
         "icao": "B772",
         "icao24": "A1F557"
       },
-      "live": {
-        "updated": "2023-12-31T12:55:45+00:00",
-        "latitude": 66.0048,
-        "longitude": -59.8492,
-        "altitude": 10363.2,
-        "direction": 265,
-        "speed_horizontal": 872.292,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
+      "live": null
     },
     {
       "flight_date": "2023-12-31",
@@ -3143,9 +3898,9 @@
         "delay": 60,
         "scheduled": "2023-12-31T18:00:00+00:00",
         "estimated": "2023-12-31T18:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T19:07:00+00:00",
+        "estimated_runway": "2023-12-31T19:07:00+00:00",
+        "actual_runway": "2023-12-31T19:07:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -3154,7 +3909,7 @@
         "icao": "KSFO",
         "terminal": "INTL",
         "gate": null,
-        "baggage": null,
+        "baggage": "CL11",
         "delay": null,
         "scheduled": "2023-12-31T17:00:00+00:00",
         "estimated": "2023-12-31T17:00:00+00:00",
@@ -3171,6 +3926,52 @@
         "number": "98",
         "iata": "VN98",
         "icao": "HVN98",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "John F Kennedy International",
+        "timezone": "America/New_York",
+        "iata": "JFK",
+        "icao": "KJFK",
+        "terminal": "5",
+        "gate": "15",
+        "delay": null,
+        "scheduled": "2023-12-31T15:39:00+00:00",
+        "estimated": "2023-12-31T15:39:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "1",
+        "gate": "B11",
+        "baggage": "CL-B",
+        "delay": null,
+        "scheduled": "2023-12-31T19:20:00+00:00",
+        "estimated": "2023-12-31T19:20:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "JetBlue Airways",
+        "iata": "B6",
+        "icao": "JBU"
+      },
+      "flight": {
+        "number": "615",
+        "iata": "B6615",
+        "icao": "JBU615",
         "codeshared": null
       },
       "aircraft": null,
@@ -3199,8 +4000,8 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": "G6",
-        "baggage": "CL2",
+        "gate": "G2",
+        "baggage": "CL5",
         "delay": null,
         "scheduled": "2023-12-31T14:50:00+00:00",
         "estimated": "2023-12-31T14:50:00+00:00",
@@ -3217,6 +4018,310 @@
         "number": "889",
         "iata": "UA889",
         "icao": "UAL889",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kahului",
+        "timezone": "Pacific/Honolulu",
+        "iata": "OGG",
+        "icao": "PHOG",
+        "terminal": null,
+        "gate": "11",
+        "delay": null,
+        "scheduled": "2023-12-31T14:30:00+00:00",
+        "estimated": "2023-12-31T14:30:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "D5",
+        "baggage": "3",
+        "delay": null,
+        "scheduled": "2023-12-31T21:35:00+00:00",
+        "estimated": "2023-12-31T21:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Qantas",
+        "iata": "QF",
+        "icao": "QFA"
+      },
+      "flight": {
+        "number": "3699",
+        "iata": "QF3699",
+        "icao": "QFA3699",
+        "codeshared": {
+          "airline_name": "alaska airlines",
+          "airline_iata": "as",
+          "airline_icao": "asa",
+          "flight_number": "819",
+          "flight_iata": "as819",
+          "flight_icao": "asa819"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kahului",
+        "timezone": "Pacific/Honolulu",
+        "iata": "OGG",
+        "icao": "PHOG",
+        "terminal": null,
+        "gate": "11",
+        "delay": null,
+        "scheduled": "2023-12-31T14:30:00+00:00",
+        "estimated": "2023-12-31T14:30:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "D5",
+        "baggage": "3",
+        "delay": null,
+        "scheduled": "2023-12-31T21:35:00+00:00",
+        "estimated": "2023-12-31T21:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Fiji Airways",
+        "iata": "FJ",
+        "icao": "FJI"
+      },
+      "flight": {
+        "number": "5833",
+        "iata": "FJ5833",
+        "icao": "FJI5833",
+        "codeshared": {
+          "airline_name": "alaska airlines",
+          "airline_iata": "as",
+          "airline_icao": "asa",
+          "flight_number": "819",
+          "flight_iata": "as819",
+          "flight_icao": "asa819"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kahului",
+        "timezone": "Pacific/Honolulu",
+        "iata": "OGG",
+        "icao": "PHOG",
+        "terminal": null,
+        "gate": "11",
+        "delay": null,
+        "scheduled": "2023-12-31T14:30:00+00:00",
+        "estimated": "2023-12-31T14:30:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "D5",
+        "baggage": "3",
+        "delay": null,
+        "scheduled": "2023-12-31T21:35:00+00:00",
+        "estimated": "2023-12-31T21:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "American Airlines",
+        "iata": "AA",
+        "icao": "AAL"
+      },
+      "flight": {
+        "number": "7579",
+        "iata": "AA7579",
+        "icao": "AAL7579",
+        "codeshared": {
+          "airline_name": "alaska airlines",
+          "airline_iata": "as",
+          "airline_icao": "asa",
+          "flight_number": "819",
+          "flight_iata": "as819",
+          "flight_icao": "asa819"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kahului",
+        "timezone": "Pacific/Honolulu",
+        "iata": "OGG",
+        "icao": "PHOG",
+        "terminal": null,
+        "gate": "35",
+        "delay": null,
+        "scheduled": "2023-12-31T14:25:00+00:00",
+        "estimated": "2023-12-31T14:25:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F11",
+        "baggage": "5",
+        "delay": null,
+        "scheduled": "2023-12-31T21:20:00+00:00",
+        "estimated": "2023-12-31T21:20:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "1722",
+        "iata": "UA1722",
+        "icao": "UAL1722",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Kahului",
+        "timezone": "Pacific/Honolulu",
+        "iata": "OGG",
+        "icao": "PHOG",
+        "terminal": null,
+        "gate": "35",
+        "delay": null,
+        "scheduled": "2023-12-31T14:25:00+00:00",
+        "estimated": "2023-12-31T14:25:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "F11",
+        "baggage": "5",
+        "delay": null,
+        "scheduled": "2023-12-31T21:20:00+00:00",
+        "estimated": "2023-12-31T21:20:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Copa Airlines",
+        "iata": "CM",
+        "icao": "CMP"
+      },
+      "flight": {
+        "number": "2494",
+        "iata": "CM2494",
+        "icao": "CMP2494",
+        "codeshared": {
+          "airline_name": "united airlines",
+          "airline_iata": "ua",
+          "airline_icao": "ual",
+          "flight_number": "1722",
+          "flight_iata": "ua1722",
+          "flight_icao": "ual1722"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Portland International",
+        "timezone": "America/Los_Angeles",
+        "iata": "PDX",
+        "icao": "KPDX",
+        "terminal": null,
+        "gate": "E5",
+        "delay": null,
+        "scheduled": "2023-12-31T13:43:00+00:00",
+        "estimated": "2023-12-31T13:43:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "3",
+        "gate": "E5",
+        "baggage": "8",
+        "delay": null,
+        "scheduled": "2023-12-31T15:35:00+00:00",
+        "estimated": "2023-12-31T15:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "United Airlines",
+        "iata": "UA",
+        "icao": "UAL"
+      },
+      "flight": {
+        "number": "2633",
+        "iata": "UA2633",
+        "icao": "UAL2633",
         "codeshared": null
       },
       "aircraft": null,
@@ -3284,7 +4389,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Shanghai Pudong International",
         "timezone": "Asia/Shanghai",
@@ -3305,14 +4410,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "I",
-        "gate": null,
-        "baggage": "11",
+        "gate": "A5",
+        "baggage": "CL10",
         "delay": null,
         "scheduled": "2023-12-31T09:30:00+00:00",
         "estimated": "2023-12-31T09:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:49:00+00:00",
+        "estimated_runway": "2023-12-31T08:49:00+00:00",
+        "actual_runway": "2023-12-31T08:49:00+00:00"
       },
       "airline": {
         "name": "Delta Air Lines",
@@ -3339,15 +4444,15 @@
       "flight_date": "2023-12-31",
       "flight_status": "active",
       "departure": {
-        "airport": "Logan International",
-        "timezone": "America/New_York",
-        "iata": "BOS",
-        "icao": "KBOS",
-        "terminal": "C",
-        "gate": "C18",
-        "delay": 72,
-        "scheduled": "2023-12-31T06:00:00+00:00",
-        "estimated": "2023-12-31T06:00:00+00:00",
+        "airport": "Chicago O'hare International",
+        "timezone": "America/Chicago",
+        "iata": "ORD",
+        "icao": "KORD",
+        "terminal": "3",
+        "gate": "K20",
+        "delay": 50,
+        "scheduled": "2023-12-31T09:55:00+00:00",
+        "estimated": "2023-12-31T09:55:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
@@ -3358,14 +4463,67 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "1",
-        "gate": "B5",
-        "baggage": "3",
+        "gate": "B21",
+        "baggage": "CL-B",
         "delay": null,
-        "scheduled": "2023-12-31T10:02:00+00:00",
-        "estimated": "2023-12-31T10:02:00+00:00",
+        "scheduled": "2023-12-31T12:46:00+00:00",
+        "estimated": "2023-12-31T12:46:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
+      },
+      "airline": {
+        "name": "British Airways",
+        "iata": "BA",
+        "icao": "BAW"
+      },
+      "flight": {
+        "number": "6996",
+        "iata": "BA6996",
+        "icao": "BAW6996",
+        "codeshared": {
+          "airline_name": "american airlines",
+          "airline_iata": "aa",
+          "airline_icao": "aal",
+          "flight_number": "2418",
+          "flight_iata": "aa2418",
+          "flight_icao": "aal2418"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Logan International",
+        "timezone": "America/New_York",
+        "iata": "BOS",
+        "icao": "KBOS",
+        "terminal": "C",
+        "gate": "C18",
+        "delay": 63,
+        "scheduled": "2023-12-31T06:00:00+00:00",
+        "estimated": "2023-12-31T06:00:00+00:00",
+        "actual": "2023-12-31T07:02:00+00:00",
+        "estimated_runway": "2023-12-31T07:02:00+00:00",
+        "actual_runway": "2023-12-31T07:02:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "1",
+        "gate": "B5",
+        "baggage": "CL-B",
+        "delay": null,
+        "scheduled": "2023-12-31T10:02:00+00:00",
+        "estimated": "2023-12-31T10:02:00+00:00",
+        "actual": "2023-12-31T09:41:00+00:00",
+        "estimated_runway": "2023-12-31T09:41:00+00:00",
+        "actual_runway": "2023-12-31T09:41:00+00:00"
       },
       "airline": {
         "name": "Hawaiian Airlines",
@@ -3390,7 +4548,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Logan International",
         "timezone": "America/New_York",
@@ -3398,12 +4556,12 @@
         "icao": "KBOS",
         "terminal": "C",
         "gate": "C18",
-        "delay": 72,
+        "delay": 63,
         "scheduled": "2023-12-31T06:00:00+00:00",
         "estimated": "2023-12-31T06:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T07:02:00+00:00",
+        "estimated_runway": "2023-12-31T07:02:00+00:00",
+        "actual_runway": "2023-12-31T07:02:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -3412,13 +4570,13 @@
         "icao": "KSFO",
         "terminal": "1",
         "gate": "B5",
-        "baggage": "3",
+        "baggage": "CL-B",
         "delay": null,
         "scheduled": "2023-12-31T10:02:00+00:00",
         "estimated": "2023-12-31T10:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:41:00+00:00",
+        "estimated_runway": "2023-12-31T09:41:00+00:00",
+        "actual_runway": "2023-12-31T09:41:00+00:00"
       },
       "airline": {
         "name": "JetBlue Airways",
@@ -3430,6 +4588,64 @@
         "iata": "B62233",
         "icao": "JBU2233",
         "codeshared": null
+      },
+      "aircraft": {
+        "registration": "N943JT",
+        "iata": "A321",
+        "icao": "A321",
+        "icao24": "AD1927"
+      },
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "timezone": "America/New_York",
+        "iata": "ATL",
+        "icao": "KATL",
+        "terminal": "S",
+        "gate": "A16",
+        "delay": 22,
+        "scheduled": "2023-12-31T10:25:00+00:00",
+        "estimated": "2023-12-31T10:25:00+00:00",
+        "actual": "2023-12-31T10:46:00+00:00",
+        "estimated_runway": "2023-12-31T10:46:00+00:00",
+        "actual_runway": "2023-12-31T10:46:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "2",
+        "gate": "C9",
+        "baggage": "1",
+        "delay": null,
+        "scheduled": "2023-12-31T12:58:00+00:00",
+        "estimated": "2023-12-31T12:58:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "LATAM Airlines",
+        "iata": "LA",
+        "icao": "LAN"
+      },
+      "flight": {
+        "number": "6493",
+        "iata": "LA6493",
+        "icao": "LAN6493",
+        "codeshared": {
+          "airline_name": "delta air lines",
+          "airline_iata": "dl",
+          "airline_icao": "dal",
+          "flight_number": "437",
+          "flight_iata": "dl437",
+          "flight_icao": "dal437"
+        }
       },
       "aircraft": null,
       "live": null
@@ -3477,58 +4693,26 @@
         "icao": "KAL25",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "HL8347",
+        "iata": "B77W",
+        "icao": "B77W",
+        "icao24": "71C347"
+      },
+      "live": {
+        "updated": "2023-12-31T14:46:24+00:00",
+        "latitude": 40.6466,
+        "longitude": 157.532,
+        "altitude": 10058.4,
+        "direction": 75,
+        "speed_horizontal": 1127.87,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Fort Lauderdale\u2013Hollywood International",
-        "timezone": "America/New_York",
-        "iata": "FLL",
-        "icao": "KFLL",
-        "terminal": "3",
-        "gate": "F9",
-        "delay": 12,
-        "scheduled": "2023-12-31T06:50:00+00:00",
-        "estimated": "2023-12-31T06:50:00+00:00",
-        "actual": "2023-12-31T07:06:00+00:00",
-        "estimated_runway": "2023-12-31T07:06:00+00:00",
-        "actual_runway": "2023-12-31T07:06:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "1",
-        "gate": "B5",
-        "baggage": "CL-B",
-        "delay": null,
-        "scheduled": "2023-12-31T10:11:00+00:00",
-        "estimated": "2023-12-31T10:11:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "JetBlue Airways",
-        "iata": "B6",
-        "icao": "JBU"
-      },
-      "flight": {
-        "number": "2977",
-        "iata": "B62977",
-        "icao": "JBU2977",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Fort Lauderdale\u2013Hollywood International",
         "timezone": "America/New_York",
@@ -3551,12 +4735,58 @@
         "terminal": "1",
         "gate": "B5",
         "baggage": "CL-B",
-        "delay": null,
+        "delay": 2,
         "scheduled": "2023-12-31T10:11:00+00:00",
         "estimated": "2023-12-31T10:11:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T10:13:00+00:00",
+        "estimated_runway": "2023-12-31T10:13:00+00:00",
+        "actual_runway": "2023-12-31T10:13:00+00:00"
+      },
+      "airline": {
+        "name": "JetBlue Airways",
+        "iata": "B6",
+        "icao": "JBU"
+      },
+      "flight": {
+        "number": "2977",
+        "iata": "B62977",
+        "icao": "JBU2977",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2023-12-31",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Fort Lauderdale\u2013Hollywood International",
+        "timezone": "America/New_York",
+        "iata": "FLL",
+        "icao": "KFLL",
+        "terminal": "3",
+        "gate": "F9",
+        "delay": 16,
+        "scheduled": "2023-12-31T06:50:00+00:00",
+        "estimated": "2023-12-31T06:50:00+00:00",
+        "actual": "2023-12-31T07:06:00+00:00",
+        "estimated_runway": "2023-12-31T07:06:00+00:00",
+        "actual_runway": "2023-12-31T07:06:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "timezone": "America/Los_Angeles",
+        "iata": "SFO",
+        "icao": "KSFO",
+        "terminal": "1",
+        "gate": "B5",
+        "baggage": "CL-B",
+        "delay": 2,
+        "scheduled": "2023-12-31T10:11:00+00:00",
+        "estimated": "2023-12-31T10:11:00+00:00",
+        "actual": "2023-12-31T10:13:00+00:00",
+        "estimated_runway": "2023-12-31T10:13:00+00:00",
+        "actual_runway": "2023-12-31T10:13:00+00:00"
       },
       "airline": {
         "name": "Azul",
@@ -3707,9 +4937,9 @@
         "timezone": "America/Los_Angeles",
         "iata": "SFO",
         "icao": "KSFO",
-        "terminal": "INTL",
+        "terminal": "I",
         "gate": null,
-        "baggage": "5T2",
+        "baggage": "CL7",
         "delay": null,
         "scheduled": "2023-12-31T17:00:00+00:00",
         "estimated": "2023-12-31T17:00:00+00:00",
@@ -3728,12 +4958,26 @@
         "icao": "AIC175",
         "codeshared": null
       },
-      "aircraft": null,
-      "live": null
+      "aircraft": {
+        "registration": "VT-AEG",
+        "iata": "B77L",
+        "icao": "B77L",
+        "icao24": "80153F"
+      },
+      "live": {
+        "updated": "2023-12-31T18:56:16+00:00",
+        "latitude": 40.1005,
+        "longitude": 177.254,
+        "altitude": 10668,
+        "direction": 91,
+        "speed_horizontal": 1135.28,
+        "speed_vertical": 0,
+        "is_ground": false
+      }
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
+      "flight_status": "landed",
       "departure": {
         "airport": "Eugene",
         "timezone": "America/Los_Angeles",
@@ -3741,12 +4985,12 @@
         "icao": "KEUG",
         "terminal": null,
         "gate": "A3",
-        "delay": null,
+        "delay": 10,
         "scheduled": "2023-12-31T08:00:00+00:00",
         "estimated": "2023-12-31T08:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:09:00+00:00",
+        "estimated_runway": "2023-12-31T08:09:00+00:00",
+        "actual_runway": "2023-12-31T08:09:00+00:00"
       },
       "arrival": {
         "airport": "San Francisco International",
@@ -3754,14 +4998,14 @@
         "iata": "SFO",
         "icao": "KSFO",
         "terminal": "3",
-        "gate": "F4",
+        "gate": "E4",
         "baggage": "4",
         "delay": null,
         "scheduled": "2023-12-31T09:42:00+00:00",
         "estimated": "2023-12-31T09:42:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T09:34:00+00:00",
+        "estimated_runway": "2023-12-31T09:34:00+00:00",
+        "actual_runway": "2023-12-31T09:34:00+00:00"
       },
       "airline": {
         "name": "SA AVIANCA",
@@ -3786,7 +5030,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Hopkins International",
         "timezone": "America/New_York",
@@ -3812,9 +5056,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:37:00+00:00",
         "estimated": "2023-12-31T09:37:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:52:00+00:00",
+        "estimated_runway": "2023-12-31T08:52:00+00:00",
+        "actual_runway": "2023-12-31T08:52:00+00:00"
       },
       "airline": {
         "name": "Air New Zealand",
@@ -3839,7 +5083,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Hopkins International",
         "timezone": "America/New_York",
@@ -3865,9 +5109,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:37:00+00:00",
         "estimated": "2023-12-31T09:37:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:52:00+00:00",
+        "estimated_runway": "2023-12-31T08:52:00+00:00",
+        "actual_runway": "2023-12-31T08:52:00+00:00"
       },
       "airline": {
         "name": "Asiana Airlines",
@@ -3892,7 +5136,7 @@
     },
     {
       "flight_date": "2023-12-31",
-      "flight_status": "active",
+      "flight_status": "landed",
       "departure": {
         "airport": "Hopkins International",
         "timezone": "America/New_York",
@@ -3918,9 +5162,9 @@
         "delay": null,
         "scheduled": "2023-12-31T09:37:00+00:00",
         "estimated": "2023-12-31T09:37:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "actual": "2023-12-31T08:52:00+00:00",
+        "estimated_runway": "2023-12-31T08:52:00+00:00",
+        "actual_runway": "2023-12-31T08:52:00+00:00"
       },
       "airline": {
         "name": "Virgin Australia",
@@ -3938,1222 +5182,6 @@
           "flight_number": "1615",
           "flight_iata": "ua1615",
           "flight_icao": "ual1615"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Hopkins International",
-        "timezone": "America/New_York",
-        "iata": "CLE",
-        "icao": "KCLE",
-        "terminal": null,
-        "gate": "C29",
-        "delay": 14,
-        "scheduled": "2023-12-31T07:00:00+00:00",
-        "estimated": "2023-12-31T07:00:00+00:00",
-        "actual": "2023-12-31T07:13:00+00:00",
-        "estimated_runway": "2023-12-31T07:13:00+00:00",
-        "actual_runway": "2023-12-31T07:13:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "E9",
-        "baggage": "2",
-        "delay": null,
-        "scheduled": "2023-12-31T09:37:00+00:00",
-        "estimated": "2023-12-31T09:37:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "1615",
-        "iata": "UA1615",
-        "icao": "UAL1615",
-        "codeshared": null
-      },
-      "aircraft": {
-        "registration": "N27267",
-        "iata": "B38M",
-        "icao": "B38M",
-        "icao24": "A2B134"
-      },
-      "live": {
-        "updated": "2023-12-31T12:24:32+00:00",
-        "latitude": 41.3197,
-        "longitude": -82.9955,
-        "altitude": 6743.7,
-        "direction": 299,
-        "speed_horizontal": 722.28,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Shanghai Pudong International",
-        "timezone": "Asia/Shanghai",
-        "iata": "PVG",
-        "icao": "ZSPD",
-        "terminal": "2",
-        "gate": "D71",
-        "delay": null,
-        "scheduled": "2023-12-31T23:15:00+00:00",
-        "estimated": "2023-12-31T23:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G9",
-        "baggage": null,
-        "delay": null,
-        "scheduled": "2023-12-31T18:20:00+00:00",
-        "estimated": "2023-12-31T18:20:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "890",
-        "iata": "UA890",
-        "icao": "UAL890",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Logan International",
-        "timezone": "America/New_York",
-        "iata": "BOS",
-        "icao": "KBOS",
-        "terminal": "C",
-        "gate": "C29",
-        "delay": 11,
-        "scheduled": "2023-12-31T05:01:00+00:00",
-        "estimated": "2023-12-31T05:01:00+00:00",
-        "actual": "2023-12-31T05:11:00+00:00",
-        "estimated_runway": "2023-12-31T05:11:00+00:00",
-        "actual_runway": "2023-12-31T05:11:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "1",
-        "gate": "B8",
-        "baggage": "CL-B",
-        "delay": null,
-        "scheduled": "2023-12-31T09:02:00+00:00",
-        "estimated": "2023-12-31T09:02:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Jet Linx Aviation",
-        "iata": "JL",
-        "icao": "JTL"
-      },
-      "flight": {
-        "number": "5938",
-        "iata": "JL5938",
-        "icao": "JTL5938",
-        "codeshared": {
-          "airline_name": "jetblue airways",
-          "airline_iata": "b6",
-          "airline_icao": "jbu",
-          "flight_number": "133",
-          "flight_iata": "b6133",
-          "flight_icao": "jbu133"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Logan International",
-        "timezone": "America/New_York",
-        "iata": "BOS",
-        "icao": "KBOS",
-        "terminal": "B",
-        "gate": "B25",
-        "delay": 115,
-        "scheduled": "2023-12-31T06:00:00+00:00",
-        "estimated": "2023-12-31T06:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F16",
-        "baggage": "3",
-        "delay": null,
-        "scheduled": "2023-12-31T09:50:00+00:00",
-        "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "ANA",
-        "iata": "NH",
-        "icao": "ANA"
-      },
-      "flight": {
-        "number": "7003",
-        "iata": "NH7003",
-        "icao": "ANA7003",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "433",
-          "flight_iata": "ua433",
-          "flight_icao": "ual433"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Logan International",
-        "timezone": "America/New_York",
-        "iata": "BOS",
-        "icao": "KBOS",
-        "terminal": "B",
-        "gate": "B25",
-        "delay": 115,
-        "scheduled": "2023-12-31T06:00:00+00:00",
-        "estimated": "2023-12-31T06:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F16",
-        "baggage": "3",
-        "delay": null,
-        "scheduled": "2023-12-31T09:50:00+00:00",
-        "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Air New Zealand",
-        "iata": "NZ",
-        "icao": "ANZ"
-      },
-      "flight": {
-        "number": "9020",
-        "iata": "NZ9020",
-        "icao": "ANZ9020",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "433",
-          "flight_iata": "ua433",
-          "flight_icao": "ual433"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Logan International",
-        "timezone": "America/New_York",
-        "iata": "BOS",
-        "icao": "KBOS",
-        "terminal": "B",
-        "gate": "B25",
-        "delay": 115,
-        "scheduled": "2023-12-31T06:00:00+00:00",
-        "estimated": "2023-12-31T06:00:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F16",
-        "baggage": "3",
-        "delay": null,
-        "scheduled": "2023-12-31T09:50:00+00:00",
-        "estimated": "2023-12-31T09:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Virgin Australia",
-        "iata": "VA",
-        "icao": "VOZ"
-      },
-      "flight": {
-        "number": "8311",
-        "iata": "VA8311",
-        "icao": "VOZ8311",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "433",
-          "flight_iata": "ua433",
-          "flight_icao": "ual433"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Sacramento International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SMF",
-        "icao": "KSMF",
-        "terminal": "A",
-        "gate": "14",
-        "delay": null,
-        "scheduled": "2023-12-31T06:34:00+00:00",
-        "estimated": "2023-12-31T06:34:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F8",
-        "baggage": "6",
-        "delay": null,
-        "scheduled": "2023-12-31T07:41:00+00:00",
-        "estimated": "2023-12-31T07:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Air New Zealand",
-        "iata": "NZ",
-        "icao": "ANZ"
-      },
-      "flight": {
-        "number": "9676",
-        "iata": "NZ9676",
-        "icao": "ANZ9676",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "5491",
-          "flight_iata": "ua5491",
-          "flight_icao": "ual5491"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Fresno Air Terminal Airport",
-        "timezone": "America/Los_Angeles",
-        "iata": "FAT",
-        "icao": "KFAT",
-        "terminal": null,
-        "gate": "7",
-        "delay": null,
-        "scheduled": "2023-12-31T06:20:00+00:00",
-        "estimated": "2023-12-31T06:20:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F6",
-        "baggage": "4",
-        "delay": null,
-        "scheduled": "2023-12-31T07:34:00+00:00",
-        "estimated": "2023-12-31T07:34:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Air New Zealand",
-        "iata": "NZ",
-        "icao": "ANZ"
-      },
-      "flight": {
-        "number": "9204",
-        "iata": "NZ9204",
-        "icao": "ANZ9204",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "5287",
-          "flight_iata": "ua5287",
-          "flight_icao": "ual5287"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Don Miguel Hidalgo y Costilla International",
-        "timezone": "America/Mexico_City",
-        "iata": "GDL",
-        "icao": "MMGL",
-        "terminal": "1",
-        "gate": "A3",
-        "delay": 10,
-        "scheduled": "2023-12-31T07:45:00+00:00",
-        "estimated": "2023-12-31T07:45:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "A4",
-        "baggage": "CL11",
-        "delay": null,
-        "scheduled": "2023-12-31T10:13:00+00:00",
-        "estimated": "2023-12-31T10:13:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Aeromexico",
-        "iata": "AM",
-        "icao": "AMX"
-      },
-      "flight": {
-        "number": "622",
-        "iata": "AM622",
-        "icao": "AMX622",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Licenciado Gustavo D\u00edaz Ordaz International",
-        "timezone": "America/Mexico_City",
-        "iata": "PVR",
-        "icao": "MMPR",
-        "terminal": "1",
-        "gate": "13",
-        "delay": 17,
-        "scheduled": "2023-12-31T09:30:00+00:00",
-        "estimated": "2023-12-31T09:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G3",
-        "baggage": "CL2",
-        "delay": null,
-        "scheduled": "2023-12-31T11:30:00+00:00",
-        "estimated": "2023-12-31T11:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Air Canada",
-        "iata": "AC",
-        "icao": "ACA"
-      },
-      "flight": {
-        "number": "5373",
-        "iata": "AC5373",
-        "icao": "ACA5373",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "694",
-          "flight_iata": "ua694",
-          "flight_icao": "ual694"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Melbourne - Tullamarine Airport",
-        "timezone": "Australia/Melbourne",
-        "iata": "MEL",
-        "icao": "YMML",
-        "terminal": "2",
-        "gate": "16",
-        "delay": 21,
-        "scheduled": "2023-12-31T13:00:00+00:00",
-        "estimated": "2023-12-31T13:00:00+00:00",
-        "actual": "2023-12-31T13:20:00+00:00",
-        "estimated_runway": "2023-12-31T13:20:00+00:00",
-        "actual_runway": "2023-12-31T13:20:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G12",
-        "baggage": "CL2",
-        "delay": null,
-        "scheduled": "2023-12-31T08:30:00+00:00",
-        "estimated": "2023-12-31T08:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "61",
-        "iata": "UA61",
-        "icao": "UAL61",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Melbourne - Tullamarine Airport",
-        "timezone": "Australia/Melbourne",
-        "iata": "MEL",
-        "icao": "YMML",
-        "terminal": "2",
-        "gate": "16",
-        "delay": 21,
-        "scheduled": "2023-12-31T13:00:00+00:00",
-        "estimated": "2023-12-31T13:00:00+00:00",
-        "actual": "2023-12-31T13:20:00+00:00",
-        "estimated_runway": "2023-12-31T13:20:00+00:00",
-        "actual_runway": "2023-12-31T13:20:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G12",
-        "baggage": "CL2",
-        "delay": null,
-        "scheduled": "2023-12-31T08:30:00+00:00",
-        "estimated": "2023-12-31T08:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Virgin Australia",
-        "iata": "VA",
-        "icao": "VOZ"
-      },
-      "flight": {
-        "number": "8003",
-        "iata": "VA8003",
-        "icao": "VOZ8003",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "61",
-          "flight_iata": "ua61",
-          "flight_icao": "ual61"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Sacramento International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SMF",
-        "icao": "KSMF",
-        "terminal": "A",
-        "gate": "14",
-        "delay": null,
-        "scheduled": "2023-12-31T06:34:00+00:00",
-        "estimated": "2023-12-31T06:34:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F8",
-        "baggage": "6",
-        "delay": null,
-        "scheduled": "2023-12-31T07:41:00+00:00",
-        "estimated": "2023-12-31T07:41:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "ANA",
-        "iata": "NH",
-        "icao": "ANA"
-      },
-      "flight": {
-        "number": "7391",
-        "iata": "NH7391",
-        "icao": "ANA7391",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "5491",
-          "flight_iata": "ua5491",
-          "flight_icao": "ual5491"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Narita International Airport",
-        "timezone": "Asia/Tokyo",
-        "iata": "NRT",
-        "icao": "RJAA",
-        "terminal": "2",
-        "gate": "64",
-        "delay": 24,
-        "scheduled": "2023-12-31T18:05:00+00:00",
-        "estimated": "2023-12-31T18:05:00+00:00",
-        "actual": "2023-12-31T18:29:00+00:00",
-        "estimated_runway": "2023-12-31T18:29:00+00:00",
-        "actual_runway": "2023-12-31T18:29:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": null,
-        "baggage": "CL8",
-        "delay": null,
-        "scheduled": "2023-12-31T10:10:00+00:00",
-        "estimated": "2023-12-31T10:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Alaska Airlines",
-        "iata": "AS",
-        "icao": "ASA"
-      },
-      "flight": {
-        "number": "7314",
-        "iata": "AS7314",
-        "icao": "ASA7314",
-        "codeshared": {
-          "airline_name": "jal",
-          "airline_iata": "jl",
-          "airline_icao": "jal",
-          "flight_number": "58",
-          "flight_iata": "jl58",
-          "flight_icao": "jal58"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Narita International Airport",
-        "timezone": "Asia/Tokyo",
-        "iata": "NRT",
-        "icao": "RJAA",
-        "terminal": "2",
-        "gate": "64",
-        "delay": 24,
-        "scheduled": "2023-12-31T18:05:00+00:00",
-        "estimated": "2023-12-31T18:05:00+00:00",
-        "actual": "2023-12-31T18:29:00+00:00",
-        "estimated_runway": "2023-12-31T18:29:00+00:00",
-        "actual_runway": "2023-12-31T18:29:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": null,
-        "baggage": "CL8",
-        "delay": null,
-        "scheduled": "2023-12-31T10:10:00+00:00",
-        "estimated": "2023-12-31T10:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "American Airlines",
-        "iata": "AA",
-        "icao": "AAL"
-      },
-      "flight": {
-        "number": "8409",
-        "iata": "AA8409",
-        "icao": "AAL8409",
-        "codeshared": {
-          "airline_name": "jal",
-          "airline_iata": "jl",
-          "airline_icao": "jal",
-          "flight_number": "58",
-          "flight_iata": "jl58",
-          "flight_icao": "jal58"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Haneda Airport",
-        "timezone": "Asia/Tokyo",
-        "iata": "HND",
-        "icao": "RJTT",
-        "terminal": "3",
-        "gate": "109",
-        "delay": 10,
-        "scheduled": "2023-12-31T22:55:00+00:00",
-        "estimated": "2023-12-31T22:55:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "INTL",
-        "gate": null,
-        "baggage": "CL6",
-        "delay": null,
-        "scheduled": "2023-12-31T15:20:00+00:00",
-        "estimated": "2023-12-31T15:20:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "ANA",
-        "iata": "NH",
-        "icao": "ANA"
-      },
-      "flight": {
-        "number": "108",
-        "iata": "NH108",
-        "icao": "ANA108",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Heathrow",
-        "timezone": "Europe/London",
-        "iata": "LHR",
-        "icao": "EGLL",
-        "terminal": "2",
-        "gate": "B32",
-        "delay": 32,
-        "scheduled": "2023-12-31T09:20:00+00:00",
-        "estimated": "2023-12-31T09:20:00+00:00",
-        "actual": "2023-12-31T09:52:00+00:00",
-        "estimated_runway": "2023-12-31T09:52:00+00:00",
-        "actual_runway": "2023-12-31T09:52:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G5",
-        "baggage": "CL4",
-        "delay": null,
-        "scheduled": "2023-12-31T12:30:00+00:00",
-        "estimated": "2023-12-31T12:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "900",
-        "iata": "UA900",
-        "icao": "UAL900",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Pittsburgh International",
-        "timezone": "America/New_York",
-        "iata": "PIT",
-        "icao": "KPIT",
-        "terminal": null,
-        "gate": "A2",
-        "delay": 6,
-        "scheduled": "2023-12-31T07:00:00+00:00",
-        "estimated": "2023-12-31T07:00:00+00:00",
-        "actual": "2023-12-31T07:05:00+00:00",
-        "estimated_runway": "2023-12-31T07:05:00+00:00",
-        "actual_runway": "2023-12-31T07:05:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "E8",
-        "baggage": "1",
-        "delay": null,
-        "scheduled": "2023-12-31T09:45:00+00:00",
-        "estimated": "2023-12-31T09:45:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "2367",
-        "iata": "UA2367",
-        "icao": "UAL2367",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "Pittsburgh International",
-        "timezone": "America/New_York",
-        "iata": "PIT",
-        "icao": "KPIT",
-        "terminal": null,
-        "gate": "A2",
-        "delay": 6,
-        "scheduled": "2023-12-31T07:00:00+00:00",
-        "estimated": "2023-12-31T07:00:00+00:00",
-        "actual": "2023-12-31T07:05:00+00:00",
-        "estimated_runway": "2023-12-31T07:05:00+00:00",
-        "actual_runway": "2023-12-31T07:05:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "E8",
-        "baggage": "1",
-        "delay": null,
-        "scheduled": "2023-12-31T09:45:00+00:00",
-        "estimated": "2023-12-31T09:45:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Air New Zealand",
-        "iata": "NZ",
-        "icao": "ANZ"
-      },
-      "flight": {
-        "number": "9395",
-        "iata": "NZ9395",
-        "icao": "ANZ9395",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "2367",
-          "flight_iata": "ua2367",
-          "flight_icao": "ual2367"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Kansai International",
-        "timezone": "Asia/Tokyo",
-        "iata": "KIX",
-        "icao": "RJBB",
-        "terminal": "1",
-        "gate": "14",
-        "delay": 120,
-        "scheduled": "2023-12-31T18:30:00+00:00",
-        "estimated": "2023-12-31T18:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "I",
-        "gate": "G7",
-        "baggage": "CL6",
-        "delay": null,
-        "scheduled": "2023-12-31T11:25:00+00:00",
-        "estimated": "2023-12-31T11:25:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "34",
-        "iata": "UA34",
-        "icao": "UAL34",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "George Bush Intercontinental",
-        "timezone": "America/Chicago",
-        "iata": "IAH",
-        "icao": "KIAH",
-        "terminal": "C",
-        "gate": "36",
-        "delay": 7,
-        "scheduled": "2023-12-31T05:15:00+00:00",
-        "estimated": "2023-12-31T05:15:00+00:00",
-        "actual": "2023-12-31T05:21:00+00:00",
-        "estimated_runway": "2023-12-31T05:21:00+00:00",
-        "actual_runway": "2023-12-31T05:21:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "2",
-        "gate": "D15",
-        "baggage": "1",
-        "delay": null,
-        "scheduled": "2023-12-31T07:39:00+00:00",
-        "estimated": "2023-12-31T07:39:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "United Airlines",
-        "iata": "UA",
-        "icao": "UAL"
-      },
-      "flight": {
-        "number": "1041",
-        "iata": "UA1041",
-        "icao": "UAL1041",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Oroville",
-        "timezone": "America/Los_Angeles",
-        "iata": "OVE",
-        "icao": "KOVE",
-        "terminal": null,
-        "gate": null,
-        "delay": 10,
-        "scheduled": "2023-12-31T03:15:00+00:00",
-        "estimated": "2023-12-31T03:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "1",
-        "gate": null,
-        "baggage": null,
-        "delay": null,
-        "scheduled": "2023-12-31T04:23:00+00:00",
-        "estimated": "2023-12-31T04:23:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Calstar",
-        "iata": null,
-        "icao": "CMD"
-      },
-      "flight": {
-        "number": "70",
-        "iata": null,
-        "icao": "CMD70",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "Fresno Air Terminal Airport",
-        "timezone": "America/Los_Angeles",
-        "iata": "FAT",
-        "icao": "KFAT",
-        "terminal": null,
-        "gate": "7",
-        "delay": null,
-        "scheduled": "2023-12-31T06:20:00+00:00",
-        "estimated": "2023-12-31T06:20:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "3",
-        "gate": "F6",
-        "baggage": "4",
-        "delay": null,
-        "scheduled": "2023-12-31T07:34:00+00:00",
-        "estimated": "2023-12-31T07:34:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Copa Airlines",
-        "iata": "CM",
-        "icao": "CMP"
-      },
-      "flight": {
-        "number": "1158",
-        "iata": "CM1158",
-        "icao": "CMP1158",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "5287",
-          "flight_iata": "ua5287",
-          "flight_icao": "ual5287"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2023-12-31",
-      "flight_status": "active",
-      "departure": {
-        "airport": "George Bush Intercontinental",
-        "timezone": "America/Chicago",
-        "iata": "IAH",
-        "icao": "KIAH",
-        "terminal": "C",
-        "gate": "36",
-        "delay": 7,
-        "scheduled": "2023-12-31T05:15:00+00:00",
-        "estimated": "2023-12-31T05:15:00+00:00",
-        "actual": "2023-12-31T05:21:00+00:00",
-        "estimated_runway": "2023-12-31T05:21:00+00:00",
-        "actual_runway": "2023-12-31T05:21:00+00:00"
-      },
-      "arrival": {
-        "airport": "San Francisco International",
-        "timezone": "America/Los_Angeles",
-        "iata": "SFO",
-        "icao": "KSFO",
-        "terminal": "2",
-        "gate": "D15",
-        "baggage": "1",
-        "delay": null,
-        "scheduled": "2023-12-31T07:39:00+00:00",
-        "estimated": "2023-12-31T07:39:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Virgin Australia",
-        "iata": "VA",
-        "icao": "VOZ"
-      },
-      "flight": {
-        "number": "8074",
-        "iata": "VA8074",
-        "icao": "VOZ8074",
-        "codeshared": {
-          "airline_name": "united airlines",
-          "airline_iata": "ua",
-          "airline_icao": "ual",
-          "flight_number": "1041",
-          "flight_iata": "ua1041",
-          "flight_icao": "ual1041"
         }
       },
       "aircraft": null,

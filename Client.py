@@ -89,7 +89,7 @@ def receive_large_data(sock):
 table.column('#0', width=0, stretch=NO) #hide the default column by tkinter library
 
 def print_as_table(rcvData,opt):
-    table.grid(row=5, column=1, columnspan=2)
+    table.grid(row=7 , column= 0 , columnspan= 3)
 
     if opt=='a':
         table.heading(0, text='Flight IATA')
@@ -97,6 +97,11 @@ def print_as_table(rcvData,opt):
         table.heading(2, text='Arrival Actual')
         table.heading(3, text='Arrival Terminal')
         table.heading(4, text='Arrival Gate')
+        column_width=[70, 110, 135, 100, 100, 70]
+
+        for i in range(0,5):
+            table.column(i, width=column_width[i])
+
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -113,8 +118,11 @@ def print_as_table(rcvData,opt):
         table.heading(2, text='Original Departure Time')
         table.heading(3, text='Estimated Arrival Time')
         table.heading(4, text='Arrival Terminal')
-        table.heading(5, text='Departure Gate')
+        table.heading(5, text='Departure Delay')
         table.heading(6, text='Arrival Gate')
+        column_width=[100, 125, 155, 155, 130, 110, 90]
+        for i in range(0,7):
+            table.column(i, width=column_width[i])
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -136,6 +144,9 @@ def print_as_table(rcvData,opt):
         table.heading(4, text='Departure Gate')
         table.heading(5, text='Arrival Gate')
         table.heading(6, text='Flight')
+        column_width=[70, 110, 135, 135, 90, 110, 70]
+        for i in range(0,7):
+            table.column(i, width=column_width[i])
         for flight in rcvData:
                 frst = flight['flight_iata'],
                 scnd = flight['departure_airport'],
@@ -148,38 +159,23 @@ def print_as_table(rcvData,opt):
                 table.insert(parent = '', index = 0, values = data)
         for i in range(7,10):
              table.column(i, width=0, stretch=NO) 
+        
 
                 
     else: #option d
         table.heading(0, text='Flight IATA')
-        table.column(0, width=110)
-
         table.heading(1, text='Departrure Airport')
-        table.column(1, width=140)
-
         table.heading(2, text='Departure Gate')
-        table.column(2, width=135)
-
         table.heading(3, text='Departure Terminal')
-        table.column(3, width=160, stretch=YES)
-
         table.heading(4, text='Arrival Airport')
-        table.column(4, width=120, stretch=YES)
-
         table.heading(5, text='Arrival Gate')
-        table.column(5, width=70)
-
         table.heading(6, text='Arrival Terminal')
-        table.column(6, width=90)
-
         table.heading(7, text='Flight Status')
-        table.column(7, width=70)
-
         table.heading(8, text='Departure Scheduled')
-        table.column(8, width=150)
-
         table.heading(9, text='Arrival Scheduled')
-        table.column(9, width=150)
+        column_width=[70, 110, 110, 135, 90, 90, 90, 100, 115, 100]
+        for i in range(0,10):
+            table.column(i, width=column_width[i])
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -210,22 +206,22 @@ def connect_first_time():
     username_label.grid_forget()
 
     #Show all widgets of requesting in the GUI
-    askToChoose.grid(row=2, column=0)
-    buRequest.grid(row=6, column=3)
-    rb1.grid(row=2, column=1)
-    rb2.grid(row=2, column=2)
-    rb3.grid(row=3, column=1)
-    rb4.grid(row=3, column=2)
+   
+    buRequest.grid(row=6, column=1)
+    rb1.grid(row=2, column=0)
+    rb2.grid(row=2, column=1)
+    rb3.grid(row=3, column=0)
+    rb4.grid(row=3, column=1)
 
 buConnect = ttk.Button(root, text='Connect', command=connect_first_time)
-buConnect.grid(row=1, column=1, columnspan=2)
+buConnect.grid(row=6, column=1, columnspan=2)
 
 #The following lines is creation to allow client to send the extra paramters for option C/D
 #They will be hidden untill the option is chosen
 optionC_label = ttk.Label(root, text='Enter departure IATA: ')
-optionC_label.grid(row=4, column=1)
+optionC_label.grid(row=4, column=0)
 optionC_entry = ttk.Entry(root)
-optionC_entry.grid(row=4, column=2)
+optionC_entry.grid(row=4, column=1)
 optionC_label.grid_remove()
 optionC_entry.grid_remove()
 
@@ -251,7 +247,6 @@ def toggle_entry_state():
 
 # Choose Option -- a/b/c/d (GUI)
 OptionChose = StringVar()
-askToChoose = ttk.Label(root, text='Please choose an Option To request')
 rb1 = ttk.Radiobutton(root, text='A. Arrived Flights', variable=OptionChose, value='a', command=toggle_entry_state)
 rb2 = ttk.Radiobutton(root, text='B. Delayed Flights', variable=OptionChose, value='b', command=toggle_entry_state)
 rb3 = ttk.Radiobutton(root, text='C. Flights from Specific City', variable=OptionChose, value='c', command=toggle_entry_state)
@@ -262,6 +257,10 @@ buRequest = ttk.Button(root, text='Request', command=handle_connection)
 buRequest.config(state = 'disabled') #until some radio button is chosen
 
 buQuit = ttk.Button(root, text='Quit', command=destroy) 
-buQuit.grid(row=6, column=2)
+buQuit.grid(row=6, column=0)
 
-root.mainloop()
+try:
+    root.mainloop()
+except KeyboardInterrupt:
+    print("Received Ctrl+C. Cleaning")
+    client.close()
