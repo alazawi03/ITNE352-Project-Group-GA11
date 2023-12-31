@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import socket
 import time
 import json
@@ -52,10 +52,15 @@ def handle_connection():
 
         try:
             received_data = receive_large_data(client) #use function to receive large data
-                
+        
             table.delete(*table.get_children()) #To preparte for new insertion
 
             print_as_table(json.loads(received_data), option_chose)
+
+            if received_data == '[]':
+                    messagebox.showinfo("Message", "There is no data for what you requested.")
+
+
         except json.JSONDecodeError as e:
             print(f"JSON decoding error: {e}")
         except Exception as e:
@@ -87,11 +92,11 @@ def print_as_table(rcvData,opt):
     table.grid(row=5, column=1, columnspan=2)
 
     if opt=='a':
-        table.heading(0, text='flight_IATA')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='arrival_actual')
-        table.heading(3, text='arrival_terminal')
-        table.heading(4, text='arrival_gate')
+        table.heading(0, text='Flight IATA')
+        table.heading(1, text='Departure Airport')
+        table.heading(2, text='Arrival Actual')
+        table.heading(3, text='Arrival Terminal')
+        table.heading(4, text='Arrival Gate')
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -103,13 +108,13 @@ def print_as_table(rcvData,opt):
         for i in range(5,10):
              table.column(i, width=0, stretch=NO) 
     elif opt=='b':
-        table.heading(0, text='flight_IATA')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='org_departure_time')
-        table.heading(3, text='estimated_arrival_time')
-        table.heading(4, text='arrival_terminal')
-        table.heading(5, text='departure_delay')
-        table.heading(6, text='arrival_gate')
+        table.heading(0, text='Flight IATA')
+        table.heading(1, text='Departuer Airport')
+        table.heading(2, text='Original Departure Time')
+        table.heading(3, text='Estimated Arrival Time')
+        table.heading(4, text='Arrival Terminal')
+        table.heading(5, text='Departure Gate')
+        table.heading(6, text='Arrival Gate')
         for flight in rcvData:
                 frst = flight['flight_IATA'],
                 scnd = flight['departure_airport'],
@@ -124,13 +129,13 @@ def print_as_table(rcvData,opt):
              table.column(i, width=0, stretch=NO) 
 
     elif opt=='c':
-        table.heading(0, text='flight_iata')
-        table.heading(1, text='departure_airport')
-        table.heading(2, text='org_departure_time')
-        table.heading(3, text='estimated_arrival_time')
-        table.heading(4, text='departure_gate')
-        table.heading(5, text='arrival_gate')
-        table.heading(6, text='status')
+        table.heading(0, text='Flight IATA')
+        table.heading(1, text='Departrure Airport')
+        table.heading(2, text='Original Departure Time')
+        table.heading(3, text='Estimated Arrival Time')
+        table.heading(4, text='Departure Gate')
+        table.heading(5, text='Arrival Gate')
+        table.heading(6, text='Flight')
         for flight in rcvData:
                 frst = flight['flight_iata'],
                 scnd = flight['departure_airport'],
@@ -146,34 +151,34 @@ def print_as_table(rcvData,opt):
 
                 
     else: #option d
-        table.heading(0, text='flight_IATA')
+        table.heading(0, text='Flight IATA')
         table.column(0, width=110)
 
-        table.heading(1, text='departure_airport')
+        table.heading(1, text='Departrure Airport')
         table.column(1, width=140)
 
-        table.heading(2, text='departure_gate')
+        table.heading(2, text='Departure Gate')
         table.column(2, width=135)
 
-        table.heading(3, text='departure_terminal')
+        table.heading(3, text='Departure Terminal')
         table.column(3, width=160, stretch=YES)
 
-        table.heading(4, text='arrival_airport')
+        table.heading(4, text='Arrival Airport')
         table.column(4, width=120, stretch=YES)
 
-        table.heading(5, text='arrival_gate')
+        table.heading(5, text='Arrival Gate')
         table.column(5, width=70)
 
-        table.heading(6, text='arrival_terminal')
+        table.heading(6, text='Arrival Terminal')
         table.column(6, width=90)
 
-        table.heading(7, text='status')
+        table.heading(7, text='Flight Status')
         table.column(7, width=70)
 
-        table.heading(8, text='departure_scheduled')
+        table.heading(8, text='Departure Scheduled')
         table.column(8, width=150)
 
-        table.heading(9, text='arrival_scheduled')
+        table.heading(9, text='Arrival Scheduled')
         table.column(9, width=150)
         for flight in rcvData:
                 frst = flight['flight_IATA'],

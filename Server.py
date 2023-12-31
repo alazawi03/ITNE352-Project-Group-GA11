@@ -8,7 +8,7 @@ saved=True
 arr_icao=input("Please enter airport code: ")
 
  #Retrive 100 records of flight at the specefied airport
-API_ACCESS_KEY = "ec9a339729e37e6f9dcb2531ca197d4e"
+API_ACCESS_KEY = "38a43965725826968ae9be37e1d6a69f"
 API_ENDPOINT = "http://api.aviationstack.com/v1/flights"
 RECORDS=100
 request_params = {
@@ -69,7 +69,7 @@ def retriveData(option,parm):
                 tempFlight={
                     'flight_IATA':i['flight']['iata'],
                     'departure_airport':i['departure']['airport'],
-                    'org_departure_time':i['arrival']['scheduled'],
+                    'org_departure_time':i['departure']['actual'],
                     'estimated_arrival_time':i['arrival']['estimated'],
                     'arrival_terminal':i['arrival']['terminal'],
                     'departure_delay':i['departure']['delay'],
@@ -161,15 +161,21 @@ if saved:
     print(2*"\n"," ✈️ "*7," Welcome to Server"," ✈️ "*7,2*"\n")
     counter=0 #Count the connections in the server
     while True:   
-        client_socket, addr = server.accept()
-        counter+=1 
-        client_name = client_socket.recv(1024)
-        name=client_name.decode('ascii')
-        if name=='quit': #in case the client quit before putting his name
-            client_socket.close()
-            continue
-        print(f"Accepted Connection No.{counter} with {name}")
-        #Each client will have 
-        client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
-        client_handler.start()
+        try:
+            client_socket, addr = server.accept()
+            counter+=1 
+            client_name = client_socket.recv(1024)
+            name=client_name.decode('ascii')
+            if name=='quit': #in case the client quit before putting his name
+                client_socket.close()
+                continue
+            print(f"Accepted Connection No.{counter} with {name}")
+            #Each client will have 
+            client_handler= threading.Thread(target=handle_client, args=(client_socket,name,counter))
+            client_handler.start()
+        except (KeyboardInterrupt):
+            print(f"{name} error... keyboard Interrupt")
+        
+
+
         
